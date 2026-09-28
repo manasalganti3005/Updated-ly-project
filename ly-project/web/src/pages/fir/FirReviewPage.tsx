@@ -1,6 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { getFirCase, type CaseState } from '../../api/fir';
+import { Link, useParams } from 'react-router-dom';
+import {
+  accusedLabel,
+  displayFact,
+  getFirCase,
+  type Fact,
+} from '../../api/fir';
 import Icon from '../../components/Icon';
 import { useDocumentTitle } from '../../useDocumentTitle';
 
@@ -14,7 +19,6 @@ import { useDocumentTitle } from '../../useDocumentTitle';
  */
 export default function FirReviewPage() {
   const { caseId } = useParams<{ caseId: string }>();
-  const navigate = useNavigate();
   useDocumentTitle('Review FIR Facts');
 
   const { data, isLoading, error } = useQuery({
@@ -126,7 +130,7 @@ export default function FirReviewPage() {
             {state.accused.map((a) => (
               <div key={a.accused_id} className="mb-3 last:mb-0">
                 <p className="text-xs font-medium text-stone-700 mb-1">
-                  {a.label()}
+                  {accusedLabel(a)}
                   <span className="ml-2 text-stone-400 font-normal">
                     Identity: {a.identity_status.replace('_', ' ')}
                   </span>
@@ -288,9 +292,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function FactRow({ label, fact }: { label: string; fact: CaseState['incident']['date'] }) {
-  const display = fact.display();
-  const isAnswered = fact.is_answered;
+function FactRow<T>({ label, fact }: { label: string; fact: Fact<T> }) {
+  const display = displayFact(fact);
   const isUnknown = fact.status === 'unknown';
   const isDeclined = fact.status === 'declined';
   const isNotProvided = fact.status === 'not_provided';
@@ -305,9 +308,6 @@ function FactRow({ label, fact }: { label: string; fact: CaseState['incident']['
       <span className="w-32 shrink-0 text-stone-500">{label}</span>
       <span className={valueClass}>
         {display}
-        {fact.approximate && isAnswered && (
-          <span className="ml-1 text-[10px] text-gold-600">(approx.)</span>
-        )}
       </span>
     </div>
   );
