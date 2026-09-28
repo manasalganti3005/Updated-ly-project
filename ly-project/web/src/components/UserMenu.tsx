@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ROLE_INFO } from '../api/auth';
 import { canUseJudgeTools } from '../api/judge';
+import { canUseLawyerTools } from '../api/lawyer';
 import { useAuth } from '../auth';
 import { useDismiss } from '../useDismiss';
 import Icon, { type IconName } from './Icon';
@@ -75,6 +76,9 @@ export default function UserMenu() {
           <MenuLink onClick={close} to="/profile" icon="user">Your profile</MenuLink>
           <MenuLink onClick={close} to="/saved" icon="bookmark">Saved judgments</MenuLink>
           <MenuLink onClick={close} to="/fir" icon="document">My FIRs</MenuLink>
+          {canUseLawyerTools(user) && (
+            <MenuLink onClick={close} to="/lawyer" icon="folder">Lawyers’ desk</MenuLink>
+          )}
           {canUseJudgeTools(user) && (
             <MenuLink onClick={close} to="/judge" icon="gavel">Judges’ research desk</MenuLink>
           )}

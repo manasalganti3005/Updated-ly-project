@@ -4,7 +4,7 @@ import { POLARITY_INFO, getTreatment, type Polarity, type Treatment } from '../.
 import { TierBadge } from '../../components/Badges';
 import CasePicker from '../../components/CasePicker';
 import Icon from '../../components/Icon';
-import JudgeDeskNav from '../../components/JudgeDeskNav';
+import DeskNav from '../../components/DeskNav';
 import SaveButton from '../../components/SaveButton';
 import { shortCaseTitle, useDocumentTitle } from '../../useDocumentTitle';
 
@@ -29,7 +29,7 @@ export default function TreatmentPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10">
-      <JudgeDeskNav />
+      <DeskNav desk="judge" />
       <h1 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-maroon-800">Treatment timeline</h1>
       <p className="mt-1 max-w-2xl text-sm text-stone-600">
         Every later judgment in this library that cites a case, in date order, and whether it relied

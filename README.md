@@ -823,6 +823,27 @@ approve or reject lawyers and judges at `/admin`.
   incident categories and the weapon flag, never names, places or free text, and
   nothing is sent to the server.
 
+## Precedent check (everyone)
+
+Every case page warns when later judgments in the library disagreed with the
+judgment, wholly or in part, and names them. Saved judgments carry the same
+warning on the Saved page.
+
+## Lawyers' desk
+
+For verified lawyers (and admins). Open it from the account menu.
+
+* **Matters** (`/lawyer/matters`): a matter is one of your folders with client,
+  court, case number, stage, next hearing date and the issue it turns on.
+  Upcoming hearings come first, with a countdown; each matter shows how many of
+  its authorities were later disagreed with.
+* **Bail argument builder** (`/lawyer/brief`): for a matter, each authority
+  with the paragraphs most relevant to the issue (the court's own words only,
+  with their para / page numbers), the precedent check and your note. Tick the
+  paragraphs you rely on and copy a formatted list of authorities. Nothing in
+  it is machine-written: the paragraphs are retrieved text and the propositions
+  are your notes.
+
 ## Judges' research desk
 
 For verified judges (and admins). Open it from the account menu, or from the
@@ -874,6 +895,9 @@ this have no owner and are not shown to anyone in the app.
 | GET / POST | `/api/me/folders` | logged in |
 | PATCH / DELETE | `/api/me/folders/:id` | logged in (deleting keeps the judgments saved) |
 | any | `/api/fir/*` | logged in; forwarded with the user's id |
+| GET | `/api/lawyer/matters` | verified lawyer or admin |
+| PUT | `/api/lawyer/matters/:folderId` | verified lawyer or admin (own folders only) |
+| GET | `/api/lawyer/brief/:folderId?issue=` | verified lawyer or admin (own folders only) |
 | GET | `/api/judge/treatment/:tid` | verified judge or admin |
 | POST | `/api/judge/compare` | verified judge or admin (SSE stream) |
 | GET | `/api/judge/memo/:folderId` | verified judge or admin (own folders only) |

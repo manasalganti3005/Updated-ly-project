@@ -309,6 +309,14 @@ function SavedRow({ item, folders }: { item: SavedCase; folders: Map<string, Fol
         <SaveButton tid={item.tid} compact />
       </div>
 
+      {item.treatment && item.treatment.neg + item.treatment.mixed > 0 && (
+        <p className="mt-2 flex items-center gap-1.5 text-xs font-medium text-vermilion-700">
+          <Icon name="alert" size={12} />
+          Precedent check: {item.treatment.neg + item.treatment.mixed} later judgment
+          {item.treatment.neg + item.treatment.mixed === 1 ? '' : 's'} disagreed with this.
+          <Link to={`/case/${item.tid}`} className="underline underline-offset-2">See which</Link>
+        </p>
+      )}
       {inFolders.length > 0 && (
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {inFolders.map((f) => (

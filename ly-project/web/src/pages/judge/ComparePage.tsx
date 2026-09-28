@@ -8,7 +8,7 @@ import CasePicker from '../../components/CasePicker';
 import { inputClass, primaryButton } from '../../components/Form';
 import Icon from '../../components/Icon';
 import { useDocumentTitle } from '../../useDocumentTitle';
-import JudgeDeskNav from '../../components/JudgeDeskNav';
+import DeskNav from '../../components/DeskNav';
 
 const SUGGESTIONS = [
   'Can the protection of anticipatory bail be limited to a fixed period?',
@@ -85,7 +85,7 @@ export default function ComparePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
-      <JudgeDeskNav />
+      <DeskNav desk="judge" />
       <h1 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-maroon-800">Compare two judgments</h1>
       <p className="mt-1 max-w-2xl text-sm text-stone-600">
         Pick two judgments and a legal question. The comparison is drawn only from extracts of the

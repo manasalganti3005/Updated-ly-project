@@ -132,11 +132,25 @@ export interface UserDoc {
 
 /** A user's named group of saved judgments — for a lawyer, typically one
  *  client matter ("Sharma bail application"). */
+/** A lawyer's client matter. Set only by verified lawyers, on their own folders. */
+export interface MatterDetails {
+  client?: string;
+  court?: string;
+  caseNumber?: string;
+  /** e.g. "Anticipatory bail application", "Regular bail", "Cancellation" */
+  stage?: string;
+  /** ISO date (YYYY-MM-DD) of the next hearing. */
+  nextHearing?: string;
+  /** The legal question the matter turns on — drives the brief's passages. */
+  issue?: string;
+}
+
 export interface FolderDoc {
   _id?: import('mongodb').ObjectId;
   userId: import('mongodb').ObjectId;
   name: string;
   description?: string;
+  matter?: MatterDetails;
   createdAt: Date;
   updatedAt: Date;
 }

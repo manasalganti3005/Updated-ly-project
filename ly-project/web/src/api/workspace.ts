@@ -16,6 +16,8 @@ export interface SavedCase {
   folderIds: string[];
   savedAt: string;
   updatedAt: string;
+  /** How later judgments treated it — present in list responses (the precedent check). */
+  treatment?: Record<'pos' | 'neg' | 'mixed' | 'neutral' | 'unknown', number>;
 }
 
 export interface Folder {
@@ -24,6 +26,8 @@ export interface Folder {
   description: string | null;
   count: number;
   createdAt: string;
+  /** Client-matter details; only lawyers can set them. */
+  matter?: import('./lawyer').MatterDetails | null;
 }
 
 export interface FolderList {

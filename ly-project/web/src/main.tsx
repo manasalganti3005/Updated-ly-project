@@ -22,7 +22,9 @@ import SignupPage from './pages/auth/SignupPage.tsx';
 import ComparePage from './pages/judge/ComparePage.tsx';
 import MemoPage from './pages/judge/MemoPage.tsx';
 import TreatmentPage from './pages/judge/TreatmentPage.tsx';
-import RequireJudge from './components/RequireJudge.tsx';
+import BriefPage from './pages/lawyer/BriefPage.tsx';
+import MattersPage from './pages/lawyer/MattersPage.tsx';
+import RequireVerified from './components/RequireVerified.tsx';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -101,36 +103,53 @@ createRoot(document.getElementById('root')!).render(
               <Route
                 path="/judge/compare"
                 element={
-                  <RequireJudge>
+                  <RequireVerified role="judge">
                     <ComparePage />
-                  </RequireJudge>
+                  </RequireVerified>
                 }
               />
               <Route
                 path="/judge/treatment"
                 element={
-                  <RequireJudge>
+                  <RequireVerified role="judge">
                     <TreatmentPage />
-                  </RequireJudge>
+                  </RequireVerified>
                 }
               />
               <Route
                 path="/judge/treatment/:tid"
                 element={
-                  <RequireJudge>
+                  <RequireVerified role="judge">
                     <TreatmentPage />
-                  </RequireJudge>
+                  </RequireVerified>
                 }
               />
               <Route
                 path="/judge/memo"
                 element={
-                  <RequireJudge>
+                  <RequireVerified role="judge">
                     <MemoPage />
-                  </RequireJudge>
+                  </RequireVerified>
                 }
               />
               <Route path="/judge" element={<Navigate to="/judge/compare" replace />} />
+              <Route
+                path="/lawyer/matters"
+                element={
+                  <RequireVerified role="lawyer">
+                    <MattersPage />
+                  </RequireVerified>
+                }
+              />
+              <Route
+                path="/lawyer/brief"
+                element={
+                  <RequireVerified role="lawyer">
+                    <BriefPage />
+                  </RequireVerified>
+                }
+              />
+              <Route path="/lawyer" element={<Navigate to="/lawyer/matters" replace />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route

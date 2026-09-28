@@ -11,6 +11,7 @@ import { z } from 'zod';
 import { folders, nodes, savedCases } from '../config.js';
 import { requireAuth } from '../lib/auth.js';
 import { deriveTier } from '../lib/search.js';
+import { treatmentCounts } from '../lib/treatment.js';
 import type { FolderDoc, SavedCaseDoc } from '../types.js';
 
 export const workspaceRouter = Router();
@@ -42,12 +43,13 @@ const publicSaved = (s: SavedCaseDoc) => ({
   updatedAt: s.updatedAt,
 });
 
-const publicFolder = (f: FolderDoc, count = 0) => ({
+export const publicFolder = (f: FolderDoc, count = 0) => ({
   id: String(f._id),
   name: f.name,
   description: f.description ?? null,
   count,
   createdAt: f.createdAt,
+  matter: f.matter ?? null,
 });
 
 const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -95,7 +97,9 @@ workspaceRouter.get('/saved', async (req, res, next) => {
     }
 
     const items = await savedCases.find(filter).sort({ updatedAt: -1 }).limit(500).toArray();
-    res.json({ items: items.map(publicSaved) });
+    // The precedent check: how later judgments treated each saved one.
+    const counts = await treatmentCounts(items.map((i) => i.tid));
+    res.json({ items: items.map((i) => ({ ...publicSaved(i), treatment: counts.get(i.tid) })) });
   } catch (err) {
     next(err);
   }

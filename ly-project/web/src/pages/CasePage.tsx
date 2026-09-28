@@ -9,6 +9,7 @@ import { PolarityBadge, TierBadge } from '../components/Badges';
 import ChatPanel from '../components/ChatPanel';
 import EgoGraph from '../components/EgoGraph';
 import PdfViewer from '../components/PdfViewer';
+import PrecedentCheck from '../components/PrecedentCheck';
 import SaveButton from '../components/SaveButton';
 import SummaryPanel from '../components/SummaryPanel';
 import Icon, { type IconName } from '../components/Icon';
@@ -98,6 +99,8 @@ export default function CasePage() {
           <SaveButton tid={tid} />
         </div>
       </div>
+
+      <PrecedentCheck citedBy={data.citations.citedBy} />
 
       {data.courtTier !== 'SC' && (
         <p

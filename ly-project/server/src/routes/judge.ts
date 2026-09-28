@@ -13,27 +13,13 @@ import { requireVerified } from '../lib/auth.js';
 import { retrieveInCase } from '../lib/caseContext.js';
 import { COMPARE_SYSTEM, formatPassages, groq } from '../lib/llm.js';
 import { deriveTier } from '../lib/search.js';
-import type { EdgeDoc, NodeDoc } from '../types.js';
+import { treatmentCounts, type Polarity } from '../lib/treatment.js';
+import type { NodeDoc } from '../types.js';
 
 export const judgeRouter = Router();
 judgeRouter.use(requireVerified('judge'));
 
-type Polarity = NonNullable<EdgeDoc['polarity']> | 'unknown';
 const yearOf = (n: Partial<NodeDoc>) => Number(String(n.publishdate ?? '').slice(0, 4)) || null;
-
-/** How later judgments in the corpus treated each of these cases. */
-async function treatmentCounts(tids: number[]) {
-  const rows = await edges
-    .aggregate<{ _id: { dst: number; p: Polarity }; n: number }>([
-      { $match: { dst: { $in: tids } } },
-      { $group: { _id: { dst: '$dst', p: { $ifNull: ['$polarity', 'unknown'] } }, n: { $sum: 1 } } },
-    ])
-    .toArray();
-  const out = new Map<number, Record<Polarity, number>>();
-  for (const tid of tids) out.set(tid, { pos: 0, neg: 0, mixed: 0, neutral: 0, unknown: 0 });
-  for (const r of rows) out.get(r._id.dst)![r._id.p] += r.n;
-  return out;
-}
 
 /**
  * GET /api/judge/treatment/:tid

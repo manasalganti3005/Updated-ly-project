@@ -5,7 +5,7 @@ import { getMemo, POLARITY_INFO, type MemoAuthority, type MemoData } from '../..
 import { listFolders, workspaceKeys } from '../../api/workspace';
 import { inputClass, primaryButton } from '../../components/Form';
 import Icon from '../../components/Icon';
-import JudgeDeskNav from '../../components/JudgeDeskNav';
+import DeskNav from '../../components/DeskNav';
 import { shortCaseTitle, useDocumentTitle } from '../../useDocumentTitle';
 
 /** The memo's own text fields are a per-browser draft; the authorities always
@@ -59,7 +59,7 @@ export default function MemoPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10 print:max-w-none print:p-0">
-      <JudgeDeskNav />
+      <DeskNav desk="judge" />
       <div className="print:hidden">
         <h1 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-maroon-800">Research memo</h1>
         <p className="mt-1 max-w-2xl text-sm text-stone-600">
