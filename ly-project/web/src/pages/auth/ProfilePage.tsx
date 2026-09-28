@@ -1,4 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import {
   ApiError,
   INDIAN_STATES,
@@ -8,6 +10,8 @@ import {
   type RoleDetails,
   type User,
 } from '../../api/auth';
+import { listFirCases } from '../../api/fir';
+import { listFolders, workspaceKeys } from '../../api/workspace';
 import { useAuth } from '../../auth';
 import {
   Field,
@@ -19,7 +23,7 @@ import {
   primaryButton,
   secondaryButton,
 } from '../../components/Form';
-import Icon from '../../components/Icon';
+import Icon, { type IconName } from '../../components/Icon';
 import { useDocumentTitle } from '../../useDocumentTitle';
 import { RoleDetailsFields } from './RoleDetailsFields';
 
@@ -47,6 +51,7 @@ export default function ProfilePage() {
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-8 sm:px-6 sm:py-10">
       <ProfileHeader user={user} />
       <VerificationPanel user={user} />
+      <WorkspaceCard />
       <ProfileForm user={user} />
       <PasswordForm />
     </div>
@@ -137,6 +142,40 @@ function VerificationPanel({ user }: { user: User }) {
         <p className="font-medium">{panels.title}</p>
         <p className="mt-0.5 opacity-90">{panels.body}</p>
         {note && <p className="mt-1.5 text-xs opacity-80">Admin note: “{note}”</p>}
+      </div>
+    </section>
+  );
+}
+
+/** Shortcuts into the user's own work, with counts. */
+function WorkspaceCard() {
+  const { data: folderList } = useQuery({ queryKey: workspaceKeys.folders, queryFn: listFolders });
+  const { data: firs } = useQuery({ queryKey: ['me', 'fir-cases'], queryFn: () => listFirCases(50), retry: false });
+
+  const tiles: { to: string; icon: IconName; label: string; value: number | undefined; hint: string }[] = [
+    { to: '/saved', icon: 'bookmark', label: 'Saved judgments', value: folderList?.total, hint: 'With your private notes' },
+    { to: '/saved', icon: 'folder', label: 'Folders', value: folderList?.folders.length, hint: 'Grouped by client or topic' },
+    { to: '/fir', icon: 'document', label: 'My FIRs', value: firs?.length, hint: 'Drafts and confirmed' },
+  ];
+
+  return (
+    <section className="rounded-xl border border-stone-200 bg-white p-6">
+      <h2 className="text-base font-semibold text-stone-900">Your workspace</h2>
+      <div className="mt-4 grid gap-3 sm:grid-cols-3">
+        {tiles.map((t) => (
+          <Link
+            key={t.label}
+            to={t.to}
+            className="group rounded-lg border border-stone-200 p-4 transition-colors hover:border-terracotta-300 hover:bg-stone-50"
+          >
+            <div className="flex items-center justify-between">
+              <Icon name={t.icon} size={16} className="text-maroon-700" />
+              <span className="font-serif text-2xl font-semibold tabular-nums text-stone-900">{t.value ?? '–'}</span>
+            </div>
+            <p className="mt-2 text-sm font-medium text-stone-800 group-hover:text-maroon-800">{t.label}</p>
+            <p className="text-xs text-stone-500">{t.hint}</p>
+          </Link>
+        ))}
       </div>
     </section>
   );

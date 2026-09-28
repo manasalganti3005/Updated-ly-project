@@ -458,6 +458,27 @@ node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
 The server refuses to start without it. Each teammate can use their own; it only
 matters that it stays secret. Changing it logs every user out.
 
+The FIR Assistant also needs a **shared secret** so the FIR backend only
+accepts requests that came through this server's login check. Generate one value
+and put it in **both** files:
+
+```bash
+python3 -c "import secrets; print(secrets.token_hex(32))"
+```
+
+```env
+# ly-project/server/.env
+FIR_SHARED_SECRET=<the value>
+
+# fir_chatbot/.env
+PROXY_SHARED_SECRET=<the same value>
+```
+
+If `FIR_SHARED_SECRET` is missing, the FIR Assistant shows "not configured".
+If `PROXY_SHARED_SECRET` is left empty, the FIR backend runs in *standalone
+mode* (its own UI at http://localhost:8000, no login, every case visible),
+which is only meant for Part 1 development and the tests.
+
 The actual MongoDB URI and API credentials must be supplied locally.
 
 Do not put those credentials into Git.
@@ -775,12 +796,30 @@ You are asked for a password at a hidden prompt. If the email already has an
 account, that account is promoted to admin and keeps its password. Admins
 approve or reject lawyers and judges at `/admin`.
 
+## What an account gives you
+
+* **Saved judgments**: a bookmark on every search result and case page. Each
+  saved judgment can carry a private note and sit in any number of folders
+  (for example one per client matter). See them at `/saved`.
+* **My FIRs**: the FIR Assistant requires login, and each user sees only the
+  FIRs they started.
+* **Profile**: details, verification status, password change, and a workspace
+  summary with counts.
+
 ## Where account data lives
 
-Accounts are stored in a separate MongoDB database, `legalplatform_app`, on the
-same Atlas cluster as `bail_rag`. The research data in `bail_rag` is never
-written to. Passwords are stored only as bcrypt hashes. The session is an
+Accounts, saved judgments and folders are stored in a separate MongoDB
+database, `legalplatform_app` (collections `users`, `saved_cases`, `folders`),
+on the same Atlas cluster as `bail_rag`. The research data in `bail_rag` is
+never written to. Passwords are stored only as bcrypt hashes. The session is an
 httpOnly cookie that page JavaScript cannot read.
+
+FIRs stay in the FIR backend's SQLite file. Its `cases` table has an `owner_id`
+column holding the account id. The Express proxy sends that id
+(`X-User-Id`) together with the shared secret (`X-Proxy-Secret`); the browser
+cannot set either header. Someone else's FIR returns 404, so case ids cannot be
+probed. Old database files gain the column automatically; FIRs created before
+this have no owner and are not shown to anyone in the app.
 
 ## Endpoints
 
@@ -794,6 +833,12 @@ httpOnly cookie that page JavaScript cannot read.
 | POST | `/api/me/password` | logged in; logs out other devices |
 | GET | `/api/admin/users?status=pending` | admin |
 | POST | `/api/admin/users/:id/verify` | admin |
+| GET | `/api/me/saved?folder=all\|unfiled\|<id>&q=` | logged in |
+| GET | `/api/me/saved/ids` | logged in |
+| GET / PUT / DELETE | `/api/me/saved/:tid` | logged in (PUT saves, or updates note / folders) |
+| GET / POST | `/api/me/folders` | logged in |
+| PATCH / DELETE | `/api/me/folders/:id` | logged in (deleting keeps the judgments saved) |
+| any | `/api/fir/*` | logged in; forwarded with the user's id |
 
 ---
 

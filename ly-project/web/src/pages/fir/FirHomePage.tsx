@@ -9,7 +9,8 @@ import { useDocumentTitle } from '../../useDocumentTitle';
  * FIR Assistant home page.
  *
  * Explains what the FIR Assistant does, allows starting a new case,
- * and shows recent cases. Clearly distinguished from Legal Research.
+ * and lists the logged-in user's own FIRs (the backend returns only theirs).
+ * Clearly distinguished from Legal Research.
  */
 export default function FirHomePage() {
   useDocumentTitle('FIR Assistant');
@@ -17,8 +18,8 @@ export default function FirHomePage() {
   const [error, setError] = useState<string | null>(null);
 
   const { data: recentCases, isLoading: loadingCases } = useQuery({
-    queryKey: ['fir-cases'],
-    queryFn: () => listFirCases(10),
+    queryKey: ['me', 'fir-cases'],
+    queryFn: () => listFirCases(50),
     staleTime: 30_000,
   });
 
@@ -103,10 +104,15 @@ export default function FirHomePage() {
         )}
       </div>
 
-      {/* Recent cases */}
+      {/* The user's own cases */}
+      {recentCases && recentCases.length === 0 && (
+        <p className="rounded-lg border border-dashed border-stone-300 p-6 text-center text-sm text-stone-500">
+          You haven’t started an FIR yet.
+        </p>
+      )}
       {recentCases && recentCases.length > 0 && (
         <div>
-          <h2 className="text-sm font-medium text-stone-700 mb-3">Recent cases</h2>
+          <h2 className="text-sm font-medium text-stone-700 mb-3">Your FIRs</h2>
           <ul className="space-y-2">
             {recentCases.map((c: CaseListItem) => (
               <li key={c.case_id}>
@@ -129,14 +135,15 @@ export default function FirHomePage() {
       )}
 
       {loadingCases && (
-        <p className="text-sm text-stone-500">Loading recent cases…</p>
+        <p className="text-sm text-stone-500">Loading your FIRs…</p>
       )}
 
       {/* Separator from Legal Research */}
       <div className="mt-10 border-t border-stone-200 pt-6">
         <p className="text-xs text-stone-400">
-          The FIR Assistant is a separate feature from Legal Research. Information you provide
-          here is not shared with the legal search, case analysis, or citation tools.
+          The FIR Assistant is a separate feature from Legal Research. Your FIRs are private to
+          your account, and nothing you enter here is shared with the legal search, case
+          analysis, or citation tools.
         </p>
       </div>
     </div>

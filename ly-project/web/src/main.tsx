@@ -7,6 +7,7 @@ import { AuthProvider, RequireAuth } from './auth.tsx';
 import './index.css';
 import CasePage from './pages/CasePage.tsx';
 import ExplorerPage from './pages/ExplorerPage.tsx';
+import SavedPage from './pages/SavedPage.tsx';
 import SearchPage from './pages/SearchPage.tsx';
 import FirHomePage from './pages/fir/FirHomePage.tsx';
 import FirConversationPage from './pages/fir/FirConversationPage.tsx';
@@ -20,7 +21,16 @@ import SignupPage from './pages/auth/SignupPage.tsx';
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: { refetchOnWindowFocus: false, staleTime: 5 * 60 * 1000, retry: 1 },
+    queries: {
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000,
+      // Retry once for network blips, but never for a 4xx: "not found" or
+      // "please log in" will not change on a second try, it only delays the message.
+      retry: (failures, err) => {
+        const status = (err as { status?: number })?.status ?? 0;
+        return failures < 1 && !(status >= 400 && status < 500);
+      },
+    },
   },
 });
 
@@ -34,11 +44,54 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/" element={<SearchPage />} />
               <Route path="/case/:tid" element={<CasePage />} />
               <Route path="/explore" element={<ExplorerPage />} />
-              <Route path="/fir" element={<FirHomePage />} />
-              <Route path="/fir/case/:caseId" element={<FirConversationPage />} />
-              <Route path="/fir/case/:caseId/review" element={<FirReviewPage />} />
-              <Route path="/fir/case/:caseId/confirm" element={<FirConfirmPage />} />
-              <Route path="/fir/case/:caseId/output" element={<FirOutputPage />} />
+              <Route
+                path="/fir"
+                element={
+                  <RequireAuth>
+                    <FirHomePage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/fir/case/:caseId"
+                element={
+                  <RequireAuth>
+                    <FirConversationPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/fir/case/:caseId/review"
+                element={
+                  <RequireAuth>
+                    <FirReviewPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/fir/case/:caseId/confirm"
+                element={
+                  <RequireAuth>
+                    <FirConfirmPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/fir/case/:caseId/output"
+                element={
+                  <RequireAuth>
+                    <FirOutputPage />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/saved"
+                element={
+                  <RequireAuth>
+                    <SavedPage />
+                  </RequireAuth>
+                }
+              />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route

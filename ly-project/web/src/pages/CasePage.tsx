@@ -7,6 +7,7 @@ import { PolarityBadge, TierBadge } from '../components/Badges';
 import ChatPanel from '../components/ChatPanel';
 import EgoGraph from '../components/EgoGraph';
 import PdfViewer from '../components/PdfViewer';
+import SaveButton from '../components/SaveButton';
 import SummaryPanel from '../components/SummaryPanel';
 import Icon, { type IconName } from '../components/Icon';
 import TextViewer from '../components/TextViewer';
@@ -74,6 +75,7 @@ export default function CasePage() {
             {data.author && <span>{data.author}</span>}
           </div>
         </div>
+        <SaveButton tid={tid} />
       </div>
 
       {data.courtTier !== 'SC' && (

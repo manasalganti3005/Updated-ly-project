@@ -5,8 +5,9 @@
  * judgments, 7,722 embedded chunks, 336 citation edges. This service never
  * writes to those collections and never calls the Indian Kanoon API.
  *
- * Accounts (signup, login, profiles, admin approval) live in a separate
- * `legalplatform_app` database — the only thing this service writes.
+ * Accounts (signup, login, profiles, admin approval) and each user's saved
+ * judgments, notes and folders live in a separate `legalplatform_app`
+ * database — the only thing this service writes.
  */
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -23,6 +24,7 @@ import { firProxyRouter } from './routes/fir.js';
 import { graphRouter } from './routes/graph.js';
 import { profileRouter } from './routes/profile.js';
 import { searchRouter } from './routes/search.js';
+import { ensureWorkspaceIndexes, workspaceRouter } from './routes/workspace.js';
 
 const app = express();
 app.use(cors());
@@ -43,6 +45,7 @@ app.get('/api/health', async (_req, res) => {
 
 app.use('/api/auth', authRouter);
 app.use('/api/me', profileRouter);
+app.use('/api/me', workspaceRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api', searchRouter);
 app.use('/api', casesRouter);
@@ -59,6 +62,7 @@ async function main() {
   await client.connect();
   console.log('[mongo] connected to bail_rag');
   await ensureUserIndexes();
+  await ensureWorkspaceIndexes();
   console.log('[mongo] legalplatform_app indexes ready');
   await warmUp(); // load BGE before the first request, not during it
   app.listen(env.port, () => {

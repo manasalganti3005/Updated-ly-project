@@ -5,12 +5,12 @@
  * The `bail_rag` collections were produced by the preprocessing + chunking
  * phases and are READ-ONLY from this application's point of view. `nodes`,
  * `edges`, `paragraphs` and `chunks` are other people's finished output.
- * The only thing this app writes is `legalplatform_app` (accounts).
+ * The only thing this app writes is `legalplatform_app` (accounts, saved work).
  */
 import 'dotenv/config';
 import dns from 'node:dns';
 import { MongoClient } from 'mongodb';
-import type { ChunkDoc, EdgeDoc, NodeDoc, UserDoc } from './types.js';
+import type { ChunkDoc, EdgeDoc, FolderDoc, NodeDoc, SavedCaseDoc, UserDoc } from './types.js';
 
 /**
  * `mongodb+srv://` needs an SRV lookup, and on this machine Node resolves the
@@ -55,6 +55,8 @@ export const env = {
   jwtSecret: JWT_SECRET,
   /** Only send the session cookie over HTTPS once deployed; dev is plain http. */
   secureCookies: process.env.NODE_ENV === 'production',
+  /** Proves to the FIR backend that a request passed this server's login check. */
+  firSharedSecret: process.env.FIR_SHARED_SECRET ?? '',
 };
 
 export const client = new MongoClient(env.mongoUri);
@@ -72,6 +74,8 @@ export const chunks = db.collection<ChunkDoc>('chunks');
 const appDb = client.db('legalplatform_app');
 
 export const users = appDb.collection<UserDoc>('users');
+export const folders = appDb.collection<FolderDoc>('folders');
+export const savedCases = appDb.collection<SavedCaseDoc>('saved_cases');
 
 /** Atlas Search index names, created by the data repo's create_search_indexes.py. */
 export const VECTOR_INDEX = 'chunks_vector_index';

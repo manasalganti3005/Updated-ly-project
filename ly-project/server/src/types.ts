@@ -129,3 +129,34 @@ export interface UserDoc {
   updatedAt: Date;
   lastLoginAt?: Date;
 }
+
+/** A user's named group of saved judgments — for a lawyer, typically one
+ *  client matter ("Sharma bail application"). */
+export interface FolderDoc {
+  _id?: import('mongodb').ObjectId;
+  userId: import('mongodb').ObjectId;
+  name: string;
+  description?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+/**
+ * One judgment a user has saved. Title, year and court are copied from
+ * `bail_rag.nodes` at save time so the Saved page is one query, not a join
+ * across databases. A judgment can sit in several folders (the same precedent
+ * is often relevant to more than one matter), or in none.
+ */
+export interface SavedCaseDoc {
+  _id?: import('mongodb').ObjectId;
+  userId: import('mongodb').ObjectId;
+  tid: number;
+  title: string;
+  year: number | null;
+  court: string;
+  courtTier: CourtTier;
+  note: string;
+  folderIds: import('mongodb').ObjectId[];
+  createdAt: Date;
+  updatedAt: Date;
+}

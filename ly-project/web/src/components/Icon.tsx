@@ -35,7 +35,13 @@ export type IconName =
   | 'shield'
   | 'check'
   | 'close'
-  | 'lock';
+  | 'lock'
+  | 'bookmark'
+  | 'bookmarkFilled'
+  | 'folder'
+  | 'plus'
+  | 'trash'
+  | 'pencil';
 
 const PATHS: Record<IconName, React.ReactNode> = {
   search: (
@@ -151,6 +157,23 @@ const PATHS: Record<IconName, React.ReactNode> = {
     <>
       <rect x="4.5" y="10.5" width="15" height="10.5" rx="2" />
       <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+    </>
+  ),
+  bookmark: <path d="M6.5 3.5h11v17L12 16.5l-5.5 4z" />,
+  // The one filled glyph: "saved" has to read at a glance in a list of results.
+  bookmarkFilled: <path d="M6.5 3.5h11v17L12 16.5l-5.5 4z" fill="currentColor" />,
+  folder: <path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z" />,
+  plus: <path d="M12 5v14M5 12h14" />,
+  trash: (
+    <>
+      <path d="M4.5 7h15M9.5 7V4.5h5V7" />
+      <path d="M6.5 7l1 13h9l1-13M10 11v5.5M14 11v5.5" />
+    </>
+  ),
+  pencil: (
+    <>
+      <path d="M15.5 4.5 19.5 8.5 8.5 19.5H4.5v-4z" />
+      <path d="m13 7 4 4" />
     </>
   ),
 };

@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ROLE_INFO } from '../api/auth';
 import { useAuth } from '../auth';
-import Icon from './Icon';
+import { useDismiss } from '../useDismiss';
+import Icon, { type IconName } from './Icon';
 
 /** Header account control: Log in / Sign up when logged out, a menu when in. */
 export default function UserMenu() {
@@ -12,23 +13,9 @@ export default function UserMenu() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Close on outside click, Escape, and navigation.
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
-    document.addEventListener('mousedown', onDown);
-    document.addEventListener('keydown', onKey);
-    return () => {
-      document.removeEventListener('mousedown', onDown);
-      document.removeEventListener('keydown', onKey);
-    };
-  }, [open]);
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  const close = useCallback(() => setOpen(false), []);
+  // Close on outside click and Escape; menu links close it themselves.
+  useDismiss(ref, open, close);
 
   if (loading) return <span className="h-7 w-7" aria-hidden="true" />;
 
@@ -84,11 +71,14 @@ export default function UserMenu() {
               {user.verification.status === 'verified' && <span className="text-sage-700"> · verified</span>}
             </p>
           </div>
-          <MenuLink to="/profile" icon="user">Your profile</MenuLink>
-          {user.role === 'admin' && <MenuLink to="/admin" icon="shield">Verify accounts</MenuLink>}
+          <MenuLink onClick={close} to="/profile" icon="user">Your profile</MenuLink>
+          <MenuLink onClick={close} to="/saved" icon="bookmark">Saved judgments</MenuLink>
+          <MenuLink onClick={close} to="/fir" icon="document">My FIRs</MenuLink>
+          {user.role === 'admin' && <MenuLink onClick={close} to="/admin" icon="shield">Verify accounts</MenuLink>}
           <button
             role="menuitem"
             onClick={async () => {
+              close();
               await logout();
               navigate('/');
             }}
@@ -103,9 +93,9 @@ export default function UserMenu() {
   );
 }
 
-function MenuLink({ to, icon, children }: { to: string; icon: 'user' | 'shield'; children: string }) {
+function MenuLink({ to, icon, onClick, children }: { to: string; icon: IconName; onClick: () => void; children: string }) {
   return (
-    <Link role="menuitem" to={to} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50">
+    <Link role="menuitem" to={to} onClick={onClick} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-stone-700 transition-colors hover:bg-stone-50">
       <Icon name={icon} size={15} className="text-stone-500" />
       {children}
     </Link>
