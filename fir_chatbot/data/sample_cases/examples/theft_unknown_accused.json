@@ -1,0 +1,522 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_3dfce65e0f",
+  "created_at": "2026-09-09T18:44:14.838155+00:00",
+  "updated_at": "2026-09-09T18:44:14.888569+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 9,
+  "questions_asked": 7,
+  "complainant": {
+    "name": {
+      "value": "Meera Joshi",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 7,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 8,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_2bac1b",
+      "identity_status": "unknown",
+      "name": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": "man on a motorcycle; black helmet, red jacket, medium build, face not visible",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": [
+          {
+            "value": "man on a motorcycle",
+            "turn": 1,
+            "reason": "elaborated"
+          }
+        ]
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "snatched the user's handbag"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-07",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "two days ago",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "unknown",
+      "approximate": true,
+      "description": "sometime in the afternoon",
+      "turn": 5,
+      "history": []
+    },
+    "location": {
+      "value": "near Market Road",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that an unknown man on a motorcycle snatched their handbag while they were walking near Market Road.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_b0eb54",
+      "type": "taking_property",
+      "description": "snatched the user's handbag while riding a motorcycle",
+      "by": "unknown",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [
+    {
+      "injury_id": "inj_354aef",
+      "type": {
+        "value": "small scrape",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "body_part": {
+        "value": "knee",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "severity_as_described": {
+        "value": "minor",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "treatment_received": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "hospital_or_doctor": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "medical_report_available": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "injured_person": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "weapons": [],
+  "property": [
+    {
+      "property_id": "prp_974141",
+      "item": {
+        "value": "handbag",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": "contained about 3,000 rupees cash, ID card and house keys",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "approximate_value": {
+        "value": "about 6,000 rupees in total",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "owner": {
+        "value": "complainant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "what_happened": {
+        "value": "taken",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "recovered": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "force_or_threat_used": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      }
+    }
+  ],
+  "witnesses": [],
+  "evidence": [
+    {
+      "evidence_id": "evd_8224e6",
+      "type": "cctv",
+      "description": {
+        "value": "possible CCTV camera at the pharmacy on Market Road",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 6,
+        "history": []
+      },
+      "in_possession": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 6,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "property.approximate_value",
+      "question": "Approximately what is the value of the handbag?",
+      "turn": 2,
+      "times_asked": 2
+    },
+    {
+      "field": "property.force_or_threat_used",
+      "question": "When the handbag was taken, was any force used or any threat made?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.time",
+      "question": "Approximately what time of day did this happen?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 5,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 6,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.contact",
+      "question": "Could you share a contact number or address? You may skip this if you prefer.",
+      "turn": 7,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.name",
+    "incident.time"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that an unknown man on a motorcycle snatched their handbag while they were walking near Market Road.\n- Date: 2026-09-07\n- Time: sometime in the afternoon (approx.)\n- Location: near Market Road\n\nPEOPLE INVOLVED\n- You (complainant): Meera Joshi\n- Person alleged to be involved: unidentified person (man on a motorcycle; black helmet, red jacket, medium build, face not visible) (description: man on a motorcycle; black helmet, red jacket, medium build, face not visible; identity not known to you)\n\nWHAT YOU STATED HAPPENED\n- unknown allegedly snatched the user's handbag while riding a motorcycle\n\nINJURIES\n- small scrape, on knee, treatment: False, medical report: not provided\n\nPROPERTY\n- handbag: taken, approx. value about 6,000 rupees in total, recovered: False\n\nWITNESSES\n- False\n\nEVIDENCE\n- cctv: possible CCTV camera at the pharmacy on Market Road, with you: False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

@@ -1,0 +1,524 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_68e5d1a382",
+  "created_at": "2026-09-09T18:44:15.275248+00:00",
+  "updated_at": "2026-09-09T18:44:15.308871+00:00",
+  "status": "complete",
+  "language": "hi-en",
+  "turn_count": 6,
+  "questions_asked": 4,
+  "complainant": {
+    "name": {
+      "value": "Rakesh",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_69167a",
+      "identity_status": "known",
+      "name": {
+        "value": "Ravi",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "neighbour",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "hit the user",
+        "broke the user's phone"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-08",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "kal raat",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "raat (night)",
+      "turn": 1,
+      "history": []
+    },
+    "location": {
+      "value": "near the building gate",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "building gate, Om Sai CHS, Thane",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that their neighbour Ravi hit them and broke their phone near the building gate.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_b3f976",
+      "type": "physical_assault",
+      "description": "hit the user",
+      "by": "Ravi",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_3bec88",
+      "type": "property_damage",
+      "description": "broke the user's phone",
+      "by": "Ravi",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [
+    {
+      "injury_id": "inj_4f2deb",
+      "type": {
+        "value": "injury",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "body_part": {
+        "value": "lip",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "severity_as_described": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "treatment_received": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "hospital_or_doctor": {
+        "value": "Sharma Clinic",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "medical_report_available": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "injured_person": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "weapons": [],
+  "property": [
+    {
+      "property_id": "prp_6c283a",
+      "item": {
+        "value": "mobile phone",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "approximate_value": {
+        "value": "12,000 rupees",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "owner": {
+        "value": "complainant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "what_happened": {
+        "value": "damaged",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "recovered": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "force_or_threat_used": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "wit_4ac66f",
+      "name": {
+        "value": "Bahadur",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "relationship": {
+        "value": "building watchman",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "saw the incident",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "property_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Ravi lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "flags.injury_occurred",
+      "question": "Were you, or anyone else, physically hurt during this incident?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "property.approximate_value",
+      "question": "Approximately what is the value of the mobile phone?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "injury.hospital_or_doctor",
+      "question": "Where were you treated - which hospital or doctor?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that their neighbour Ravi hit them and broke their phone near the building gate.\n- Date: 2026-09-08\n- Time: raat (night) (approx.)\n- Location: near the building gate (building gate, Om Sai CHS, Thane)\n\nPEOPLE INVOLVED\n- You (complainant): Rakesh\n- Person alleged to be involved: Ravi (relationship: neighbour)\n\nWHAT YOU STATED HAPPENED\n- Ravi allegedly hit the user\n- Ravi allegedly broke the user's phone\n\nINJURIES\n- injury, on lip, treatment: True, at Sharma Clinic, medical report: False\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- mobile phone: damaged, approx. value 12,000 rupees, recovered: not provided\n\nWITNESSES\n- Bahadur (building watchman): saw the incident\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

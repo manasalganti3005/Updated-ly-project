@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_99305d7d39",
+  "created_at": "2026-09-09T18:44:15.108386+00:00",
+  "updated_at": "2026-09-09T18:44:15.142138+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 6,
+  "questions_asked": 4,
+  "complainant": {
+    "name": {
+      "value": "Sunita",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_925562",
+      "identity_status": "known",
+      "name": {
+        "value": "Anil",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "husband",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "pushed the user against the wall"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-08",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "last night",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "night",
+      "turn": 1,
+      "history": []
+    },
+    "location": {
+      "value": "the user's home",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "Flat 7, Green Park",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that their husband Anil pushed them against the wall at home.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_e75409",
+      "type": "physical_assault",
+      "description": "pushed the user against the wall",
+      "by": "Anil",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [
+    {
+      "injury_id": "inj_190b09",
+      "type": {
+        "value": "shoulder pain",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "body_part": {
+        "value": "shoulder",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "severity_as_described": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "treatment_received": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "hospital_or_doctor": {
+        "value": "Dr. Rao's clinic",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "medical_report_available": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "injured_person": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_fae7f5",
+      "name": {
+        "value": "Anjali",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 5,
+        "history": []
+      },
+      "relationship": {
+        "value": "daughter",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "heard the incident from the next room",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evd_6896f4",
+      "type": "medical_report",
+      "description": {
+        "value": "prescription from Dr. Rao",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": [
+        {
+          "value": false,
+          "description": null,
+          "turn": 1,
+          "reason": "corrected"
+        }
+      ]
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "ctr_c72d1b",
+      "type": "event",
+      "field": "flags.injury_occurred",
+      "earlier_value": "False",
+      "later_value": "True (details described)",
+      "earlier_turn": 1,
+      "later_turn": 2,
+      "explanation": "Earlier whether anyone was injured was recorded as 'False', but the latest message suggests 'True (details described)'.",
+      "severity": "high",
+      "requires_clarification": false,
+      "resolved": true,
+      "resolution": "Yes I was hurt, I just didn't think of it as an injury at first."
+    }
+  ],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Anil lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "flags.weapon_involved",
+      "question": "Was any object or weapon used or shown during the incident?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "clarify.flags.injury_occurred",
+      "question": "I want to make sure I record this correctly. Earlier, whether anyone was injured was noted as 'False', but your last message suggests 'True (details described)'. Which one is correct?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "witness.name",
+      "question": "Could you share the name of the person who witnessed it, if you know it?",
+      "turn": 4,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that their husband Anil pushed them against the wall at home.\n- Date: 2026-09-08\n- Time: night (approx.)\n- Location: the user's home (Flat 7, Green Park)\n\nPEOPLE INVOLVED\n- You (complainant): Sunita\n- Person alleged to be involved: Anil (relationship: husband)\n\nWHAT YOU STATED HAPPENED\n- Anil allegedly pushed the user against the wall\n\nINJURIES\n- shoulder pain, on shoulder, treatment: True, at Dr. Rao's clinic, medical report: True\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Anjali (daughter): heard the incident from the next room\n\nEVIDENCE\n- medical report: prescription from Dr. Rao, with you: True\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": [
+    "turn 1: user denied - user states they were not injured"
+  ]
+}

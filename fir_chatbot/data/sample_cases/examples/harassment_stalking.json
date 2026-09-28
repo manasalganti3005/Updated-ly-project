@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_6c87fe740d",
+  "created_at": "2026-09-09T18:44:14.971185+00:00",
+  "updated_at": "2026-09-09T18:44:15.015963+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Sneha",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_1e6e80",
+      "identity_status": "unknown",
+      "name": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": "around 30, thin, grey cap, black backpack",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "followed the user from the bus stop to college repeatedly",
+        "made comments about the user's clothes"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "past two weeks, most recently yesterday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "between 8 and 8:30 in the morning",
+      "turn": 3,
+      "history": []
+    },
+    "location": {
+      "value": "between the bus stop and the user's college",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "near Ruia College, Matunga",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that an unknown man has followed them from the bus stop to college almost daily for two weeks and yesterday made comments about their clothes.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_dac81c",
+      "type": "stalking_or_following",
+      "description": "followed the user from the bus stop to college almost every day for two weeks",
+      "by": "unknown",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_0e7474",
+      "type": "harassment",
+      "description": "came close and made comments about the user's clothes",
+      "by": "unknown",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_c0df4d",
+      "name": {
+        "value": "Divya",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "relationship": {
+        "value": "friend",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "has seen the man following twice",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evd_68b0e3",
+      "type": "photograph",
+      "description": {
+        "value": "photo of the man from behind taken yesterday",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "accused.description",
+      "question": "Could you describe the person - approximate age, build, clothing, or anything else you noticed?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.time",
+      "question": "Approximately what time of day did this happen?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.evidence_available",
+      "question": "Do you have any evidence, such as photos, videos, CCTV footage, messages, or medical documents?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.contact",
+      "question": "Could you share a contact number or address? You may skip this if you prefer.",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.name"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that an unknown man has followed them from the bus stop to college almost daily for two weeks and yesterday made comments about their clothes.\n- Date: past two weeks, most recently yesterday (approx.)\n- Time: between 8 and 8:30 in the morning (approx.)\n- Location: between the bus stop and the user's college (near Ruia College, Matunga)\n\nPEOPLE INVOLVED\n- You (complainant): Sneha\n- Person alleged to be involved: unidentified person (around 30, thin, grey cap, black backpack) (description: around 30, thin, grey cap, black backpack; identity not known to you)\n\nWHAT YOU STATED HAPPENED\n- unknown allegedly followed the user from the bus stop to college almost every day for two weeks\n- unknown allegedly came close and made comments about the user's clothes\n\nINJURIES\n- Injury occurred: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Divya (friend): has seen the man following twice\n\nEVIDENCE\n- photograph: photo of the man from behind taken yesterday, with you: True\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

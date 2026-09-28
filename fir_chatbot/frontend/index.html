@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIR Intake Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>FIR Intake Assistant</h1>
+      <p class="subtitle">Academic prototype - organises the facts you report. It does not give legal advice or decide guilt.</p>
+    </div>
+    <div class="topbar-actions">
+      <span id="case-id" class="pill">no case</span>
+      <button id="new-case" class="btn secondary">New case</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="chat-panel">
+      <div id="messages" class="messages" aria-live="polite"></div>
+      <div id="review-bar" class="review-bar hidden">
+        <span>Please review the summary above.</span>
+        <button id="confirm-yes" class="btn">Confirm - it is correct</button>
+        <button id="confirm-no" class="btn secondary">I need to correct something</button>
+      </div>
+      <form id="composer" class="composer">
+        <textarea id="input" rows="2" placeholder="Describe what happened, or answer the question..." required></textarea>
+        <button id="send" class="btn" type="submit">Send</button>
+      </form>
+      <p id="status-line" class="status-line"></p>
+    </section>
+
+    <aside class="side-panel">
+      <div class="card">
+        <h2>Case progress</h2>
+        <div class="progress"><div id="progress-bar" class="progress-bar" style="width:0%"></div></div>
+        <p id="progress-text" class="muted">0% - waiting for your description</p>
+        <ul id="checklist" class="checklist"></ul>
+      </div>
+
+      <div class="card">
+        <h2>Needs clarification</h2>
+        <ul id="contradictions" class="plain"><li class="muted">None</li></ul>
+      </div>
+
+      <div class="card">
+        <h2>Still missing</h2>
+        <ul id="missing" class="plain"><li class="muted">-</li></ul>
+      </div>
+
+      <div class="card">
+        <h2>Collected information</h2>
+        <details>
+          <summary>Show CaseState JSON</summary>
+          <pre id="state-json" class="json">{}</pre>
+        </details>
+        <button id="download" class="btn secondary small">Download JSON</button>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_1726e37a8e",
+  "created_at": "2026-09-09T18:44:15.343379+00:00",
+  "updated_at": "2026-09-09T18:44:15.381836+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Neha Kulkarni",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_b74821",
+      "identity_status": "partially_known",
+      "name": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alias": {
+        "value": "Tiger",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "sent threatening WhatsApp messages",
+        "threatened to leak the user's photos unless paid"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "since last Friday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "mostly late at night",
+      "turn": 3,
+      "history": []
+    },
+    "location": {
+      "value": "user's home in Pune (messages received on phone)",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "location_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that since last Friday an unknown number, using the name 'Tiger', has sent WhatsApp messages threatening to leak their photos unless they pay.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_696db6",
+      "type": "online_or_message_based",
+      "description": "sent threatening WhatsApp messages demanding payment",
+      "by": "person known as 'Tiger'",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_e97d8e",
+      "type": "threat",
+      "description": "threatened to leak the user's photos unless paid",
+      "by": "person known as 'Tiger'",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_ccd0c7",
+      "type": "threat",
+      "description": "threats delivered only through WhatsApp messages from an unknown number, never by call",
+      "by": "person known as 'Tiger'",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 2
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_4db563",
+      "name": {
+        "value": "Ritu",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "relationship": {
+        "value": "sister",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "was shown the messages",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evd_35717e",
+      "type": "messages",
+      "description": {
+        "value": "threatening WhatsApp messages",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    },
+    {
+      "evidence_id": "evd_e6284f",
+      "type": "messages",
+      "description": {
+        "value": "screenshots of all messages and the sender's number",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "threat_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "incident.location",
+      "question": "Where did this happen?",
+      "turn": 2,
+      "times_asked": 2
+    },
+    {
+      "field": "flags.weapon_involved",
+      "question": "Was any object or weapon used or shown during the incident?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "threat.method",
+      "question": "How was the threat made - in person, by phone call, message, or some other way?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.address",
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.description"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that since last Friday an unknown number, using the name 'Tiger', has sent WhatsApp messages threatening to leak their photos unless they pay.\n- Date: since last Friday (approx.)\n- Time: mostly late at night (approx.)\n- Location: user's home in Pune (messages received on phone)\n\nPEOPLE INVOLVED\n- You (complainant): Neha Kulkarni\n- Person alleged to be involved: person known as 'Tiger'\n\nWHAT YOU STATED HAPPENED\n- person known as 'Tiger' allegedly sent threatening WhatsApp messages demanding payment\n- person known as 'Tiger' allegedly threatened to leak the user's photos unless paid\n- person known as 'Tiger' allegedly threats delivered only through WhatsApp messages from an unknown number, never by call\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Ritu (sister): was shown the messages\n\nEVIDENCE\n- messages: threatening WhatsApp messages, with you: True\n- messages: screenshots of all messages and the sender's number, with you: True\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

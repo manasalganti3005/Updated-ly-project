@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Three cases and the citations between them: the corpus in miniature.
+       Deliberately not a gavel or scales — this app's subject is the graph. -->
+  <rect width="32" height="32" rx="7" fill="#7a1f1c" />
+  <g stroke="#e6d5c6" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
+    <line x1="10" y1="9.5" x2="22" y2="16" />
+    <line x1="10" y1="22.5" x2="22" y2="16" />
+  </g>
+  <circle cx="10" cy="9.5" r="3" fill="#f2e6dd" />
+  <circle cx="10" cy="22.5" r="3" fill="#f2e6dd" />
+  <circle cx="22" cy="16" r="4.2" fill="#d9ae5f" />
+</svg>

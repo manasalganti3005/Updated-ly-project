@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_766564b866",
+  "created_at": "2026-09-09T18:44:15.218166+00:00",
+  "updated_at": "2026-09-09T18:44:15.263349+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Tanvi Rao",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": 22,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_5f0a71",
+      "identity_status": "unknown",
+      "name": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "stole the user's bicycle"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-03",
+      "status": "confirmed",
+      "approximate": true,
+      "description": "Thursday",
+      "turn": 2,
+      "history": [
+        {
+          "value": "2026-09-02",
+          "description": "Wednesday",
+          "turn": 1,
+          "reason": "corrected"
+        }
+      ]
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "between 4 PM and 6 PM",
+      "turn": 4,
+      "history": []
+    },
+    "location": {
+      "value": "outside the library",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "main gate cycle stand, City Central Library",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that an unknown person stole their bicycle from outside the library.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_84cfc4",
+      "type": "taking_property",
+      "description": "stole the user's bicycle",
+      "by": "unknown",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [
+    {
+      "property_id": "prp_d2e59a",
+      "item": {
+        "value": "bicycle",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": "blue Hero cycle",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "approximate_value": {
+        "value": "about 7,000 rupees",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "owner": {
+        "value": "complainant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "what_happened": {
+        "value": "taken",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "recovered": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "force_or_threat_used": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      }
+    }
+  ],
+  "witnesses": [],
+  "evidence": [
+    {
+      "evidence_id": "evd_9e7914",
+      "type": "cctv",
+      "description": {
+        "value": "library may have CCTV footage",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "in_possession": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "property.approximate_value",
+      "question": "Approximately what is the value of the bicycle?",
+      "turn": 2,
+      "times_asked": 2
+    },
+    {
+      "field": "incident.time",
+      "question": "Approximately what time of day did this happen?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.contact",
+      "question": "Could you share a contact number or address? You may skip this if you prefer.",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.name",
+    "accused.description"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that an unknown person stole their bicycle from outside the library.\n- Date: 2026-09-03 (approx.)\n- Time: between 4 PM and 6 PM (approx.)\n- Location: outside the library (main gate cycle stand, City Central Library)\n\nPEOPLE INVOLVED\n- You (complainant): Tanvi Rao\n- Person alleged to be involved: unidentified person (identity not known to you)\n\nWHAT YOU STATED HAPPENED\n- unknown allegedly stole the user's bicycle\n\nPROPERTY\n- bicycle: taken, approx. value about 7,000 rupees, recovered: False\n\nWITNESSES\n- False\n\nEVIDENCE\n- cctv: library may have CCTV footage, with you: False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

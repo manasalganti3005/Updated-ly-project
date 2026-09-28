@@ -1,0 +1,414 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_c5fdfab52f",
+  "created_at": "2026-09-09T18:44:15.145318+00:00",
+  "updated_at": "2026-09-09T18:44:15.179181+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 6,
+  "questions_asked": 4,
+  "complainant": {
+    "name": {
+      "value": "Deepak Verma",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_33fe2c",
+      "identity_status": "known",
+      "name": {
+        "value": "Nikhil",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "colleague",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "abused the user loudly in the office canteen"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-08",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "yesterday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": "18:30",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "6:30 PM",
+      "turn": 3,
+      "history": [
+        {
+          "value": "20:00",
+          "description": "8 PM",
+          "turn": 1,
+          "reason": "corrected"
+        }
+      ]
+    },
+    "location": {
+      "value": "office canteen",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "third floor canteen, Infotech Park",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that colleague Nikhil verbally abused them loudly in the office canteen.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_5c3de8",
+      "type": "verbal_abuse",
+      "description": "abused the user loudly in front of others",
+      "by": "Nikhil",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_8393d1",
+      "name": {
+        "value": "Pooja",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "relationship": {
+        "value": "colleague",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "saw the abuse",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [],
+  "timeline": [
+    {
+      "sequence": 1,
+      "time_description": "20:00",
+      "description": "Nikhil allegedly abused the user in the canteen",
+      "turn": 1
+    },
+    {
+      "sequence": 2,
+      "time_description": "19:30",
+      "description": "User states they left the office",
+      "turn": 2
+    },
+    {
+      "sequence": 3,
+      "time_description": "20:00",
+      "description": "User states they reached home",
+      "turn": 2
+    }
+  ],
+  "flags": {
+    "injury_occurred": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Nikhil lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.evidence_available",
+      "question": "Do you have any evidence, such as photos, videos, CCTV footage, messages, or medical documents?",
+      "turn": 3,
+      "times_asked": 2
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that colleague Nikhil verbally abused them loudly in the office canteen.\n- Date: 2026-09-08\n- Time: 18:30\n- Location: office canteen (third floor canteen, Infotech Park)\n\nPEOPLE INVOLVED\n- You (complainant): Deepak Verma\n- Person alleged to be involved: Nikhil (relationship: colleague)\n\nWHAT YOU STATED HAPPENED\n- Nikhil allegedly abused the user loudly in front of others\n\nINJURIES\n- Injury occurred: False\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Pooja (colleague): saw the abuse\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_ecffdc1aa5",
+  "created_at": "2026-09-09T18:44:15.181898+00:00",
+  "updated_at": "2026-09-09T18:44:15.214717+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 6,
+  "questions_asked": 2,
+  "complainant": {
+    "name": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_e0d278",
+      "identity_status": "known",
+      "name": {
+        "value": "Kishore",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "neighbour",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "abused the user with filthy language"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-09",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "this morning",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": "09:00",
+      "status": "uncertain",
+      "approximate": true,
+      "description": "around 9",
+      "turn": 1,
+      "history": []
+    },
+    "location": {
+      "value": "outside Kishore's door in the user's building",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "second floor corridor, Building B",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that neighbour Kishore repeatedly abuses them with filthy language, most recently this morning.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_53a2b4",
+      "type": "verbal_abuse",
+      "description": "abused the user with filthy language",
+      "by": "Kishore",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [],
+  "evidence": [],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Kishore lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 2,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.address",
+    "complainant.name",
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that neighbour Kishore repeatedly abuses them with filthy language, most recently this morning.\n- Date: 2026-09-09\n- Time: 09:00 (approx.)\n- Location: outside Kishore's door in the user's building (second floor corridor, Building B)\n\nPEOPLE INVOLVED\n- You (complainant): name declined to share\n- Person alleged to be involved: Kishore (relationship: neighbour)\n\nWHAT YOU STATED HAPPENED\n- Kishore allegedly abused the user with filthy language\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- False\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_277e3322fa",
+  "created_at": "2026-09-09T18:44:15.385892+00:00",
+  "updated_at": "2026-09-09T18:44:15.419777+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 6,
+  "questions_asked": 4,
+  "complainant": {
+    "name": {
+      "value": "Prakash",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_569d53",
+      "identity_status": "unknown",
+      "name": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "stole the user's wallet"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": null,
+      "status": "unknown",
+      "approximate": true,
+      "description": "recently",
+      "turn": 2,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "unknown",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "location": {
+      "value": "bus depot",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "Platform 2, Swargate depot",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that their wallet was stolen at the bus depot by an unknown person and they noticed it on reaching home.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_c514a5",
+      "type": "taking_property",
+      "description": "stole the user's wallet",
+      "by": "unknown",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [
+    {
+      "property_id": "prp_69d46d",
+      "item": {
+        "value": "wallet",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "approximate_value": {
+        "value": "around 3,000 rupees",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "owner": {
+        "value": "complainant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "what_happened": {
+        "value": "taken",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "recovered": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "force_or_threat_used": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      }
+    }
+  ],
+  "witnesses": [],
+  "evidence": [],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "ctr_406333",
+      "type": "direct",
+      "field": "incident.date",
+      "earlier_value": "None",
+      "later_value": "None",
+      "earlier_turn": 1,
+      "later_turn": 2,
+      "explanation": "Earlier the date of the incident was recorded as 'None', but the latest message suggests 'None'.",
+      "severity": "medium",
+      "requires_clarification": false,
+      "resolved": true,
+      "resolution": "About 2,500 rupees cash and my cards, so around 3,000. Not recovered. Nobody pushed me, I didn't feel anything."
+    }
+  ],
+  "missing_information": [
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "property.approximate_value",
+      "question": "Approximately what is the value of the wallet?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "clarify.incident.date",
+      "question": "I want to make sure I record this correctly. Earlier, the date of the incident was noted as 'None', but your last message suggests 'None'. Which one is correct?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.name",
+    "accused.description",
+    "incident.date",
+    "incident.time"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that their wallet was stolen at the bus depot by an unknown person and they noticed it on reaching home.\n- Date: recently (approx.)\n- Time: not known to complainant\n- Location: bus depot (Platform 2, Swargate depot)\n\nPEOPLE INVOLVED\n- You (complainant): Prakash\n- Person alleged to be involved: unidentified person (identity not known to you)\n\nWHAT YOU STATED HAPPENED\n- unknown allegedly stole the user's wallet\n\nPROPERTY\n- wallet: taken, approx. value around 3,000 rupees, recovered: False\n\nWITNESSES\n- False\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

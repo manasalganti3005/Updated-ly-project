@@ -1,0 +1,420 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_b360746b6c",
+  "created_at": "2026-09-09T18:44:14.794385+00:00",
+  "updated_at": "2026-09-09T18:44:14.835189+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Priya Nair",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": "98xxxxxx21",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_c99def",
+      "identity_status": "known",
+      "name": {
+        "value": "Vikram",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "former colleague",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "threatened to harm the user's family",
+        "demanded 50,000 rupees"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "last week",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": "23:00",
+      "status": "uncertain",
+      "approximate": true,
+      "description": "usually at night around 11",
+      "turn": 2,
+      "history": []
+    },
+    "location": {
+      "value": "user's home in Andheri",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 2,
+      "history": []
+    },
+    "location_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that Vikram, a former colleague, has been calling repeatedly for a week and threatening to harm the user's family unless paid 50,000 rupees.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_1c79b6",
+      "type": "threat",
+      "description": "threatened over phone calls to harm the user's family unless paid 50,000 rupees",
+      "by": "Vikram",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [],
+  "evidence": [
+    {
+      "evidence_id": "evd_c4d2f6",
+      "type": "audio",
+      "description": {
+        "value": "recordings of three threatening calls",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    },
+    {
+      "evidence_id": "evd_6b1df5",
+      "type": "call_records",
+      "description": {
+        "value": "calls from two different numbers",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "threat_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Vikram lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "incident.location",
+      "question": "Where did this happen?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.weapon_involved",
+      "question": "Was any object or weapon used or shown during the incident?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "threat.method",
+      "question": "How was the threat made - in person, by phone call, message, or some other way?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.contact",
+      "question": "Could you share a contact number or address? You may skip this if you prefer.",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that Vikram, a former colleague, has been calling repeatedly for a week and threatening to harm the user's family unless paid 50,000 rupees.\n- Date: last week (approx.)\n- Time: 23:00 (approx.)\n- Location: user's home in Andheri\n\nPEOPLE INVOLVED\n- You (complainant): Priya Nair\n- Person alleged to be involved: Vikram (relationship: former colleague)\n\nWHAT YOU STATED HAPPENED\n- Vikram allegedly threatened over phone calls to harm the user's family unless paid 50,000 rupees\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- False\n\nEVIDENCE\n- audio: recordings of three threatening calls, with you: True\n- call records: calls from two different numbers, with you: True\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

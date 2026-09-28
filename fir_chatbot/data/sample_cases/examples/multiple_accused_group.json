@@ -1,0 +1,619 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_909c0bffec",
+  "created_at": "2026-09-09T18:44:14.928602+00:00",
+  "updated_at": "2026-09-09T18:44:14.968339+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Salim Shaikh",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": false,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": "Sameer",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": "younger brother",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_eab0bc",
+      "identity_status": "known",
+      "name": {
+        "value": "Raju",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "lives in the same lane",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "beat up the victim"
+      ]
+    },
+    {
+      "accused_id": "acc_a928c8",
+      "identity_status": "known",
+      "name": {
+        "value": "Pintu",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "lives in the same lane",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "beat up the victim"
+      ]
+    },
+    {
+      "accused_id": "acc_a62be2",
+      "identity_status": "unknown",
+      "name": {
+        "value": null,
+        "status": "unknown",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": "tall, around 25 years old, white shirt",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "beat up the victim"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-05",
+      "status": "confirmed",
+      "approximate": true,
+      "description": "last Saturday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "night",
+      "turn": 1,
+      "history": []
+    },
+    "location": {
+      "value": "outside the wine shop on MG Road",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": null,
+      "status": "unknown",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that three men, two of them named Raju and Pintu, beat up their younger brother Sameer outside the wine shop on MG Road, resulting in a fractured arm.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_54125e",
+      "type": "physical_assault",
+      "description": "beat up the victim Sameer",
+      "by": "Raju",
+      "against": "Sameer",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_eb3be8",
+      "type": "physical_assault",
+      "description": "beat up the victim Sameer",
+      "by": "Pintu",
+      "against": "Sameer",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_484d15",
+      "type": "physical_assault",
+      "description": "beat up the victim Sameer",
+      "by": "unknown",
+      "against": "Sameer",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [
+    {
+      "injury_id": "inj_e3d0a1",
+      "type": {
+        "value": "fracture",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "body_part": {
+        "value": "arm",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "severity_as_described": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "treatment_received": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "hospital_or_doctor": {
+        "value": "Lifeline Hospital",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "medical_report_available": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "injured_person": {
+        "value": "Sameer",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      }
+    }
+  ],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_25fae0",
+      "name": {
+        "value": "Iqbal",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "relationship": {
+        "value": "wine shop owner",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "saw the assault",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evd_8375d2",
+      "type": "medical_report",
+      "description": {
+        "value": "X-ray report from Lifeline Hospital",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "in_possession": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 3,
+        "history": []
+      },
+      "reference": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      }
+    }
+  ],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "ctr_242a0b",
+      "type": "direct",
+      "field": "incident.time",
+      "earlier_value": "None",
+      "later_value": "None",
+      "earlier_turn": 1,
+      "later_turn": 5,
+      "explanation": "Earlier the time of the incident was recorded as 'None', but the latest message suggests 'None'.",
+      "severity": "medium",
+      "requires_clarification": false,
+      "resolved": true,
+      "resolution": "No need for my contact now."
+    }
+  ],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Raju lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "accused.description",
+      "question": "Could you describe the person - approximate age, build, clothing, or anything else you noticed?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "injury.treatment_received",
+      "question": "Did you receive any medical treatment for the injury?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.witnesses_present",
+      "question": "Was anyone else present who saw or heard what happened?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "clarify.incident.time",
+      "question": "I want to make sure I record this correctly. Earlier, the time of the incident was noted as 'None', but your last message suggests 'None'. Which one is correct?",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [
+    "accused.name",
+    "incident.location_details"
+  ],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that three men, two of them named Raju and Pintu, beat up their younger brother Sameer outside the wine shop on MG Road, resulting in a fractured arm.\n- Date: 2026-09-05 (approx.)\n- Time: night (approx.)\n- Location: outside the wine shop on MG Road\n\nPEOPLE INVOLVED\n- You (complainant): Salim Shaikh\n- Person affected: Sameer, younger brother\n- Person alleged to be involved: Raju (relationship: lives in the same lane)\n- Person alleged to be involved: Pintu (relationship: lives in the same lane)\n- Person alleged to be involved: unidentified person (tall, around 25 years old, white shirt) (description: tall, around 25 years old, white shirt; identity not known to you)\n\nWHAT YOU STATED HAPPENED\n- Raju allegedly beat up the victim Sameer\n- Pintu allegedly beat up the victim Sameer\n- unknown allegedly beat up the victim Sameer\n\nINJURIES\n- fracture, on arm, treatment: True, at Lifeline Hospital, medical report: True\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Iqbal (wine shop owner): saw the assault\n\nEVIDENCE\n- medical report: X-ray report from Lifeline Hospital, with you: True\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

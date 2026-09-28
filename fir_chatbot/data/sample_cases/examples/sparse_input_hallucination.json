@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_2ca03798c5",
+  "created_at": "2026-09-09T18:44:15.266587+00:00",
+  "updated_at": "2026-09-09T18:44:15.272300+00:00",
+  "status": "in_progress",
+  "language": "en",
+  "turn_count": 1,
+  "questions_asked": 1,
+  "complainant": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "explicit",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [],
+  "incident": {
+    "date": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "location": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "location_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that something bad happened to them and they want to file a complaint.",
+      "status": "extracted",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [],
+  "evidence": [],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "property_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "threat_involved": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "evidence_available": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "incident.date",
+      "priority": "high",
+      "reason": "core fact: when",
+      "suggested_question": "Approximately when did this happen? The day or date is enough."
+    },
+    {
+      "field": "incident.location",
+      "priority": "high",
+      "reason": "core fact: where",
+      "suggested_question": "Where did this happen?"
+    },
+    {
+      "field": "accused.presence",
+      "priority": "high",
+      "reason": "core fact: who",
+      "suggested_question": "Who was involved? If you know the person, please share their name; if not, that's okay - just say so."
+    },
+    {
+      "field": "incident.time",
+      "priority": "low",
+      "reason": "helps place the incident",
+      "suggested_question": "Approximately what time of day did this happen?"
+    },
+    {
+      "field": "flags.witnesses_present",
+      "priority": "low",
+      "reason": "supporting information",
+      "suggested_question": "Was anyone else present who saw or heard what happened?"
+    },
+    {
+      "field": "flags.evidence_available",
+      "priority": "low",
+      "reason": "supporting information",
+      "suggested_question": "Do you have any evidence, such as photos, videos, CCTV footage, messages, or medical documents?"
+    },
+    {
+      "field": "complainant.name",
+      "priority": "low",
+      "reason": "needed for the record",
+      "suggested_question": "May I have your name for the record?"
+    },
+    {
+      "field": "complainant.contact",
+      "priority": "low",
+      "reason": "needed to contact you; optional",
+      "suggested_question": "Could you share a contact number or address? You may skip this if you prefer."
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 19,
+  "asked_questions": [
+    {
+      "field": "incident.date",
+      "question": "Approximately when did this happen? The day or date is enough.",
+      "turn": 1,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": false,
+  "final_summary": null,
+  "notes": []
+}

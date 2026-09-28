@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_9630a4d166",
+  "created_at": "2026-09-09T18:44:15.066686+00:00",
+  "updated_at": "2026-09-09T18:44:15.105503+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 7,
+  "questions_asked": 5,
+  "complainant": {
+    "name": {
+      "value": "Hitesh Shah",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_d0d09b",
+      "identity_status": "known",
+      "name": {
+        "value": "Bhavesh",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "ex-tenant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "threatened to burn down the user's shop"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-08",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "yesterday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": "11:00",
+      "status": "uncertain",
+      "approximate": true,
+      "description": "around 11 in the morning",
+      "turn": 4,
+      "history": []
+    },
+    "location": {
+      "value": "the user's shop in Borivali",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "Shop 4, LT Road, Borivali West",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that their ex-tenant Bhavesh came to their shop and threatened to burn it down unless his deposit was returned.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_5ffd66",
+      "type": "threat",
+      "description": "threatened to burn down the shop if the deposit was not returned",
+      "by": "Bhavesh",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [],
+  "witnesses": [
+    {
+      "witness_id": "wit_28147b",
+      "name": {
+        "value": "Ganesh",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "relationship": {
+        "value": "staff member",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "heard the threat",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 4,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [],
+  "timeline": [],
+  "flags": {
+    "injury_occurred": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "property_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "threat_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 5,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [
+    {
+      "contradiction_id": "ctr_3195bb",
+      "type": "identity",
+      "field": "accused.identity",
+      "earlier_value": "Bhavesh",
+      "later_value": "unknown",
+      "earlier_turn": 1,
+      "later_turn": 2,
+      "explanation": "Earlier who the person was was recorded as 'Bhavesh', but the latest message suggests 'unknown'.",
+      "severity": "high",
+      "requires_clarification": false,
+      "resolved": true,
+      "resolution": "Sorry for the confusion. It was Bhavesh, my ex-tenant. I know him well."
+    }
+  ],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Bhavesh lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "flags.weapon_involved",
+      "question": "Was any object or weapon used or shown during the incident?",
+      "turn": 3,
+      "times_asked": 2
+    },
+    {
+      "field": "clarify.accused.identity",
+      "question": "I want to make sure I record this correctly. Earlier, who the person was was noted as 'Bhavesh', but your last message suggests 'unknown'. Which one is correct?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "threat.method",
+      "question": "How was the threat made - in person, by phone call, message, or some other way?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.ongoing_or_repeated",
+      "question": "Has this happened before, or was it a one-time incident?",
+      "turn": 5,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that their ex-tenant Bhavesh came to their shop and threatened to burn it down unless his deposit was returned.\n- Date: 2026-09-08\n- Time: 11:00 (approx.)\n- Location: the user's shop in Borivali (Shop 4, LT Road, Borivali West)\n\nPEOPLE INVOLVED\n- You (complainant): Hitesh Shah\n- Person alleged to be involved: Bhavesh (relationship: ex-tenant)\n\nWHAT YOU STATED HAPPENED\n- Bhavesh allegedly threatened to burn down the shop if the deposit was not returned\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- Property involved: False\n\nWITNESSES\n- Ganesh (staff member): heard the threat\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": []
+}

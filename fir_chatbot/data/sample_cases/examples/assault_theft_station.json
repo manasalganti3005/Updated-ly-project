@@ -1,0 +1,516 @@
+{
+  "schema_version": "1.0",
+  "case_id": "case_c25c82341a",
+  "created_at": "2026-09-09T18:44:14.671090+00:00",
+  "updated_at": "2026-09-09T18:44:14.741856+00:00",
+  "status": "complete",
+  "language": "en",
+  "turn_count": 11,
+  "questions_asked": 9,
+  "complainant": {
+    "name": {
+      "value": "Amit Sharma",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 9,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "declined",
+      "approximate": false,
+      "description": null,
+      "turn": 10,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "complainant_is_victim": {
+    "value": true,
+    "status": "confirmed",
+    "approximate": false,
+    "description": null,
+    "turn": 1,
+    "history": []
+  },
+  "victim": {
+    "name": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "age": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "gender": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "address": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "contact": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "relationship_to_other_party": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    },
+    "other_details": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "accused": [
+    {
+      "accused_id": "acc_533b1e",
+      "identity_status": "known",
+      "name": {
+        "value": "Rahul",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "alias": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "relationship_to_complainant": {
+        "value": "classmate",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 2,
+        "history": []
+      },
+      "address_or_whereabouts": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "alleged_actions": [
+        "pushed the user",
+        "took the user's phone"
+      ]
+    }
+  ],
+  "incident": {
+    "date": {
+      "value": "2026-09-08",
+      "status": "confirmed",
+      "approximate": false,
+      "description": "yesterday",
+      "turn": 1,
+      "history": []
+    },
+    "time": {
+      "value": null,
+      "status": "confirmed",
+      "approximate": true,
+      "description": "evening",
+      "turn": 1,
+      "history": []
+    },
+    "location": {
+      "value": "near the railway station",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "location_details": {
+      "value": "just outside the west exit of Dadar station",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 8,
+      "history": []
+    },
+    "description": {
+      "value": "The user states that Rahul stopped them near the station after college, an argument followed, and Rahul allegedly pushed them and took their phone.",
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "ongoing_or_repeated": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "acts": [
+    {
+      "act_id": "act_674818",
+      "type": "physical_assault",
+      "description": "pushed the user",
+      "by": "Rahul",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    },
+    {
+      "act_id": "act_4414b6",
+      "type": "taking_property",
+      "description": "took the user's phone",
+      "by": "Rahul",
+      "against": "complainant",
+      "status": "explicit",
+      "turn": 1
+    }
+  ],
+  "injuries": [],
+  "weapons": [],
+  "property": [
+    {
+      "property_id": "prp_b03ee8",
+      "item": {
+        "value": "mobile phone",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "description": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "approximate_value": {
+        "value": "around 20,000 rupees",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 5,
+        "history": []
+      },
+      "owner": {
+        "value": "complainant",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "what_happened": {
+        "value": "taken",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "recovered": {
+        "value": false,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 5,
+        "history": []
+      },
+      "force_or_threat_used": {
+        "value": true,
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 6,
+        "history": []
+      }
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "wit_41ae64",
+      "name": {
+        "value": "Neha",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "relationship": {
+        "value": "friend",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      },
+      "contact": {
+        "value": null,
+        "status": "not_provided",
+        "approximate": false,
+        "description": null,
+        "turn": null,
+        "history": []
+      },
+      "what_witnessed": {
+        "value": "saw the incident",
+        "status": "confirmed",
+        "approximate": false,
+        "description": null,
+        "turn": 1,
+        "history": []
+      }
+    }
+  ],
+  "evidence": [],
+  "timeline": [
+    {
+      "sequence": 1,
+      "time_description": "yesterday evening",
+      "description": "User walking home from college, stopped by Rahul near the station",
+      "turn": 1
+    },
+    {
+      "sequence": 2,
+      "time_description": null,
+      "description": "Argument between user and Rahul",
+      "turn": 1
+    },
+    {
+      "sequence": 3,
+      "time_description": null,
+      "description": "Rahul allegedly pushed the user and took the phone",
+      "turn": 1
+    }
+  ],
+  "flags": {
+    "injury_occurred": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 3,
+      "history": []
+    },
+    "weapon_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 4,
+      "history": []
+    },
+    "property_involved": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "threat_involved": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 6,
+      "history": []
+    },
+    "witnesses_present": {
+      "value": true,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 1,
+      "history": []
+    },
+    "evidence_available": {
+      "value": false,
+      "status": "confirmed",
+      "approximate": false,
+      "description": null,
+      "turn": 7,
+      "history": []
+    },
+    "police_informed_earlier": {
+      "value": null,
+      "status": "not_provided",
+      "approximate": false,
+      "description": null,
+      "turn": null,
+      "history": []
+    }
+  },
+  "contradictions": [],
+  "missing_information": [
+    {
+      "field": "accused.address_or_whereabouts",
+      "priority": "optional",
+      "reason": "the person is known to you",
+      "suggested_question": "Do you know where Rahul lives or can usually be found?"
+    },
+    {
+      "field": "flags.police_informed_earlier",
+      "priority": "optional",
+      "reason": "context",
+      "suggested_question": "Have you already informed the police or anyone in authority about this?"
+    }
+  ],
+  "completion_percentage": 100,
+  "asked_questions": [
+    {
+      "field": "accused.relationship_to_complainant",
+      "question": "How do you know Rahul? What is your relationship with them?",
+      "turn": 1,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.injury_occurred",
+      "question": "Were you, or anyone else, physically hurt during this incident?",
+      "turn": 2,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.weapon_involved",
+      "question": "Was any object or weapon used or shown during the incident?",
+      "turn": 3,
+      "times_asked": 1
+    },
+    {
+      "field": "property.approximate_value",
+      "question": "Approximately what is the value of the mobile phone?",
+      "turn": 4,
+      "times_asked": 1
+    },
+    {
+      "field": "property.force_or_threat_used",
+      "question": "When the mobile phone was taken, was any force used or any threat made?",
+      "turn": 5,
+      "times_asked": 1
+    },
+    {
+      "field": "flags.evidence_available",
+      "question": "Do you have any evidence, such as photos, videos, CCTV footage, messages, or medical documents?",
+      "turn": 6,
+      "times_asked": 1
+    },
+    {
+      "field": "incident.location_details",
+      "question": "Could you describe the exact spot more precisely - a landmark, building, or area name?",
+      "turn": 7,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.name",
+      "question": "May I have your name for the record?",
+      "turn": 8,
+      "times_asked": 1
+    },
+    {
+      "field": "complainant.contact",
+      "question": "Could you share a contact number or address? You may skip this if you prefer.",
+      "turn": 9,
+      "times_asked": 1
+    }
+  ],
+  "declined_fields": [
+    "complainant.contact"
+  ],
+  "unknown_fields": [],
+  "pending_clarification": null,
+  "user_confirmed": true,
+  "final_summary": "Please review the information I have collected so far.\n\nINCIDENT\n- What happened (as you described it): The user states that Rahul stopped them near the station after college, an argument followed, and Rahul allegedly pushed them and took their phone.\n- Date: 2026-09-08\n- Time: evening (approx.)\n- Location: near the railway station (just outside the west exit of Dadar station)\n\nPEOPLE INVOLVED\n- You (complainant): Amit Sharma\n- Person alleged to be involved: Rahul (relationship: classmate)\n\nWHAT YOU STATED HAPPENED\n- Rahul allegedly pushed the user\n- Rahul allegedly took the user's phone\n\nINJURIES\n- Injury occurred: False\n\nOBJECTS / WEAPONS\n- Weapon or object involved: False\n\nPROPERTY\n- mobile phone: taken, approx. value around 20,000 rupees, recovered: False\n\nWITNESSES\n- Neha (friend): saw the incident\n\nEVIDENCE\n- False\n\nIs this information correct? You can confirm, correct something, or add more details.",
+  "notes": [
+    "turn 3: user denied - user was not injured",
+    "turn 4: user denied - no weapon used"
+  ]
+}

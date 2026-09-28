@@ -1,0 +1,2724 @@
+{
+  "_readme": "Synthetic test scenarios. All names and events are fictional. Each turn has the user's message and the extraction a correct LLM should produce (used by the offline 'demo' provider and as the reference for evaluation). 'expect' holds assertions used by evaluation/run_eval.py.",
+  "scenarios": [
+    {
+      "id": "assault_theft_station",
+      "title": "Push and phone snatching near station (known accused, witness, no injury)",
+      "tags": [
+        "physical_assault",
+        "theft",
+        "known_accused",
+        "witness_present",
+        "no_injury",
+        "no_evidence"
+      ],
+      "turns": [
+        {
+          "user": "Yesterday evening I was walking home from college when Rahul stopped me near the station. We argued and he pushed me and took my phone. My friend Neha saw it.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Rahul",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "pushed the user",
+                  "took the user's phone"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "time_description": "evening",
+              "location": "near the railway station",
+              "description": "The user states that Rahul stopped them near the station after college, an argument followed, and Rahul allegedly pushed them and took their phone."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "pushed the user",
+                "by": "Rahul",
+                "against": "complainant"
+              },
+              {
+                "type": "taking_property",
+                "description": "took the user's phone",
+                "by": "Rahul",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "mobile phone",
+                "owner": "complainant",
+                "what_happened": "taken"
+              }
+            ],
+            "witnesses": [
+              {
+                "name": "Neha",
+                "relationship": "friend",
+                "what_witnessed": "saw the incident"
+              }
+            ],
+            "timeline": [
+              {
+                "time_description": "yesterday evening",
+                "description": "User walking home from college, stopped by Rahul near the station"
+              },
+              {
+                "description": "Argument between user and Rahul"
+              },
+              {
+                "description": "Rahul allegedly pushed the user and took the phone"
+              }
+            ],
+            "flags": {
+              "property_involved": true,
+              "witnesses_present": true
+            }
+          },
+          "expect_question_in": [
+            "accused.relationship_to_complainant",
+            "flags.injury_occurred",
+            "flags.weapon_involved"
+          ]
+        },
+        {
+          "user": "He is my classmate, we have known each other for two years.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Rahul",
+                "relationship_to_complainant": "classmate"
+              }
+            ]
+          }
+        },
+        {
+          "user": "No, I wasn't hurt.",
+          "extraction": {
+            "flags": {
+              "injury_occurred": false
+            },
+            "denials": [
+              "user was not injured"
+            ]
+          }
+        },
+        {
+          "user": "No, nothing like that, he used his hands only.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false
+            },
+            "denials": [
+              "no weapon used"
+            ]
+          }
+        },
+        {
+          "user": "The phone is worth around 20,000 rupees. It has not been returned.",
+          "extraction": {
+            "property": [
+              {
+                "item": "mobile phone",
+                "approximate_value": "around 20,000 rupees",
+                "recovered": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "He just grabbed it from my hand after pushing me, he didn't say anything threatening.",
+          "extraction": {
+            "property": [
+              {
+                "item": "mobile phone",
+                "force_or_threat_used": true
+              }
+            ],
+            "flags": {
+              "threat_involved": false
+            }
+          }
+        },
+        {
+          "user": "No, I don't have any photos or videos.",
+          "extraction": {
+            "flags": {
+              "evidence_available": false
+            }
+          }
+        },
+        {
+          "user": "It was just outside the west exit of Dadar station.",
+          "extraction": {
+            "incident": {
+              "location_details": "just outside the west exit of Dadar station"
+            }
+          }
+        },
+        {
+          "user": "My name is Amit Sharma.",
+          "extraction": {
+            "complainant": {
+              "name": "Amit Sharma"
+            }
+          }
+        },
+        {
+          "user": "I'd rather not share my number right now.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes, that is all correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Rahul",
+          "accused[0].identity_status": "known",
+          "accused[0].relationship_to_complainant.value": "classmate",
+          "incident.date.value": "@yesterday",
+          "incident.time.description": "evening",
+          "incident.time.value": null,
+          "incident.location.value": "station",
+          "property[0].item.value": "phone",
+          "property[0].recovered.value": false,
+          "witnesses[0].name.value": "Neha",
+          "flags.injury_occurred.value": false,
+          "flags.weapon_involved.value": false,
+          "complainant.name.value": "Amit"
+        },
+        "must_be_null": [
+          "complainant.age.value",
+          "complainant.address.value",
+          "accused[0].address_or_whereabouts.value"
+        ],
+        "empty_lists": [
+          "injuries",
+          "weapons",
+          "evidence"
+        ],
+        "declined": [
+          "complainant.contact"
+        ],
+        "missing_after_turn": {
+          "1": [
+            "accused.relationship_to_complainant",
+            "flags.injury_occurred"
+          ]
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "assault_stick_injury",
+      "title": "Assault with a stick, injury and hospital treatment (known accused, neighbour)",
+      "tags": [
+        "physical_assault",
+        "weapon",
+        "injury",
+        "known_accused",
+        "evidence_available"
+      ],
+      "turns": [
+        {
+          "user": "My neighbour Suresh hit me with a wooden stick on Monday night outside my house. My head was bleeding and I went to the civil hospital.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Suresh",
+                "identity_status": "known",
+                "relationship_to_complainant": "neighbour",
+                "alleged_actions": [
+                  "hit the user with a wooden stick"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "Monday",
+              "time_description": "night",
+              "location": "outside the user's house",
+              "description": "The user states that their neighbour Suresh hit them with a wooden stick outside their house, causing a bleeding head injury."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "hit the user with a wooden stick",
+                "by": "Suresh",
+                "against": "complainant"
+              }
+            ],
+            "weapons": [
+              {
+                "object": "wooden stick",
+                "used": true,
+                "how_used": "used to hit the user"
+              }
+            ],
+            "injuries": [
+              {
+                "type": "bleeding wound",
+                "body_part": "head",
+                "treatment_received": true,
+                "hospital_or_doctor": "civil hospital",
+                "injured_person": "complainant"
+              }
+            ],
+            "flags": {
+              "injury_occurred": true,
+              "weapon_involved": true
+            }
+          },
+          "expect_question_in": [
+            "injury.medical_report_available",
+            "flags.witnesses_present",
+            "flags.evidence_available",
+            "flags.property_involved",
+            "incident.location_details"
+          ]
+        },
+        {
+          "user": "Yes, I have the hospital discharge paper and the medicine bills.",
+          "extraction": {
+            "injuries": [
+              {
+                "medical_report_available": true
+              }
+            ],
+            "evidence": [
+              {
+                "type": "medical_report",
+                "description": "hospital discharge paper",
+                "in_possession": true
+              },
+              {
+                "type": "bill_or_receipt",
+                "description": "medicine bills",
+                "in_possession": true
+              }
+            ],
+            "flags": {
+              "evidence_available": true
+            }
+          }
+        },
+        {
+          "user": "My wife saw everything from the door. Her name is Kavita.",
+          "extraction": {
+            "witnesses": [
+              {
+                "name": "Kavita",
+                "relationship": "wife",
+                "what_witnessed": "saw the incident from the door"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true
+            }
+          }
+        },
+        {
+          "user": "No property was taken or damaged.",
+          "extraction": {
+            "flags": {
+              "property_involved": false
+            }
+          }
+        },
+        {
+          "user": "Right in front of my gate, house number 12, Shanti Nagar.",
+          "extraction": {
+            "incident": {
+              "location_details": "in front of the gate of house number 12, Shanti Nagar"
+            }
+          }
+        },
+        {
+          "user": "I am Ramesh Patil, 45 years old.",
+          "extraction": {
+            "complainant": {
+              "name": "Ramesh Patil",
+              "age": 45
+            }
+          }
+        },
+        {
+          "user": "You can skip my phone number.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Suresh",
+          "accused[0].relationship_to_complainant.value": "neighbour",
+          "weapons[0].object.value": "stick",
+          "injuries[0].body_part.value": "head",
+          "injuries[0].treatment_received.value": true,
+          "injuries[0].medical_report_available.value": true,
+          "witnesses[0].name.value": "Kavita",
+          "incident.time.description": "night",
+          "incident.time.value": null,
+          "incident.date.approximate": true,
+          "complainant.age.value": 45
+        },
+        "must_be_null": [
+          "incident.time.value"
+        ],
+        "empty_lists": [
+          "property"
+        ],
+        "missing_after_turn": {
+          "1": [
+            "flags.witnesses_present",
+            "flags.evidence_available"
+          ]
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "threat_phone_calls",
+      "title": "Repeated threatening phone calls from a known person",
+      "tags": [
+        "threat",
+        "known_accused",
+        "evidence_available",
+        "repeated"
+      ],
+      "turns": [
+        {
+          "user": "A man named Vikram who used to work with me has been calling me for the last week and threatening to harm my family if I don't pay him 50,000.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Vikram",
+                "identity_status": "known",
+                "relationship_to_complainant": "former colleague",
+                "alleged_actions": [
+                  "threatened to harm the user's family",
+                  "demanded 50,000 rupees"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "last week",
+              "description": "The user states that Vikram, a former colleague, has been calling repeatedly for a week and threatening to harm the user's family unless paid 50,000 rupees.",
+              "ongoing_or_repeated": true
+            },
+            "acts": [
+              {
+                "type": "threat",
+                "description": "threatened over phone calls to harm the user's family unless paid 50,000 rupees",
+                "by": "Vikram",
+                "against": "complainant"
+              }
+            ],
+            "flags": {
+              "threat_involved": true
+            }
+          },
+          "expect_question_in": [
+            "incident.location",
+            "flags.weapon_involved",
+            "threat.method",
+            "threat.nature"
+          ]
+        },
+        {
+          "user": "I receive the calls at my home in Andheri, usually at night around 11.",
+          "extraction": {
+            "incident": {
+              "location": "user's home in Andheri",
+              "time_hhmm": "23:00",
+              "time_description": "usually at night around 11"
+            },
+            "uncertain_fields": [
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "No weapon, it is all over the phone. He calls from two different numbers and I have recorded three of the calls.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false,
+              "evidence_available": true
+            },
+            "evidence": [
+              {
+                "type": "audio",
+                "description": "recordings of three threatening calls",
+                "in_possession": true
+              },
+              {
+                "type": "call_records",
+                "description": "calls from two different numbers",
+                "in_possession": true
+              }
+            ]
+          }
+        },
+        {
+          "user": "Nobody else has heard the calls directly.",
+          "extraction": {
+            "flags": {
+              "witnesses_present": false
+            }
+          }
+        },
+        {
+          "user": "My name is Priya Nair. No property involved.",
+          "extraction": {
+            "complainant": {
+              "name": "Priya Nair"
+            },
+            "flags": {
+              "property_involved": false
+            }
+          }
+        },
+        {
+          "user": "My number is fine to share: 98xxxxxx21.",
+          "extraction": {
+            "complainant": {
+              "contact": "98xxxxxx21"
+            }
+          }
+        },
+        {
+          "user": "Yes that's right.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Vikram",
+          "acts[0].type": "threat",
+          "incident.ongoing_or_repeated.value": true,
+          "incident.time.value": "23:00",
+          "incident.time.status": "uncertain",
+          "flags.evidence_available.value": true,
+          "evidence[0].type": "audio",
+          "flags.weapon_involved.value": false
+        },
+        "empty_lists": [
+          "injuries",
+          "weapons",
+          "witnesses"
+        ],
+        "missing_after_turn": {
+          "1": [
+            "incident.location"
+          ]
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "theft_unknown_accused",
+      "title": "Bag snatching by an unknown person on a motorcycle",
+      "tags": [
+        "theft",
+        "unknown_accused",
+        "ambiguous_time",
+        "no_witness"
+      ],
+      "turns": [
+        {
+          "user": "Two days ago someone on a motorcycle snatched my handbag while I was walking near Market Road. I don't know who he was, it happened very fast.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "identity_status": "unknown",
+                "description": "man on a motorcycle",
+                "alleged_actions": [
+                  "snatched the user's handbag"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "two days ago",
+              "location": "near Market Road",
+              "description": "The user states that an unknown man on a motorcycle snatched their handbag while they were walking near Market Road."
+            },
+            "acts": [
+              {
+                "type": "taking_property",
+                "description": "snatched the user's handbag while riding a motorcycle",
+                "by": "unknown",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "handbag",
+                "owner": "complainant",
+                "what_happened": "taken"
+              }
+            ],
+            "unknown_fields": [
+              "accused.name"
+            ],
+            "flags": {
+              "property_involved": true
+            }
+          },
+          "expect_question_in": [
+            "accused.description",
+            "property.approximate_value",
+            "property.recovered",
+            "incident.time",
+            "flags.witnesses_present"
+          ]
+        },
+        {
+          "user": "He wore a black helmet and a red jacket, medium build. I couldn't see his face.",
+          "extraction": {
+            "accused": [
+              {
+                "description": "black helmet, red jacket, medium build, face not visible",
+                "identity_status": "unknown"
+              }
+            ]
+          }
+        },
+        {
+          "user": "The bag had about 3,000 rupees cash, my ID card and house keys, total maybe 6,000 rupees. Nothing recovered.",
+          "extraction": {
+            "property": [
+              {
+                "item": "handbag",
+                "description": "contained about 3,000 rupees cash, ID card and house keys",
+                "approximate_value": "about 6,000 rupees in total",
+                "recovered": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "He pulled it hard from my shoulder and I fell, but I only got a small scrape on my knee, no treatment needed.",
+          "extraction": {
+            "property": [
+              {
+                "item": "handbag",
+                "force_or_threat_used": true
+              }
+            ],
+            "injuries": [
+              {
+                "type": "small scrape",
+                "body_part": "knee",
+                "treatment_received": false,
+                "severity_as_described": "minor"
+              }
+            ],
+            "flags": {
+              "injury_occurred": true
+            }
+          }
+        },
+        {
+          "user": "I don't remember the exact time, it was sometime in the afternoon.",
+          "extraction": {
+            "incident": {
+              "time_description": "sometime in the afternoon"
+            },
+            "unknown_fields": [
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "There was nobody close by. There might be a CCTV camera at the pharmacy on that road, but I don't have any footage myself.",
+          "extraction": {
+            "flags": {
+              "witnesses_present": false,
+              "evidence_available": true
+            },
+            "evidence": [
+              {
+                "type": "cctv",
+                "description": "possible CCTV camera at the pharmacy on Market Road",
+                "in_possession": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "I am Meera Joshi.",
+          "extraction": {
+            "complainant": {
+              "name": "Meera Joshi"
+            }
+          }
+        },
+        {
+          "user": "Skip the contact please.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].identity_status": "unknown",
+          "accused[0].name.value": null,
+          "accused[0].description.value": "helmet",
+          "property[0].item.value": "handbag",
+          "property[0].recovered.value": false,
+          "incident.time.value": null,
+          "incident.time.approximate": true,
+          "incident.date.value": "@2daysago",
+          "injuries[0].body_part.value": "knee",
+          "injuries[0].treatment_received.value": false,
+          "flags.witnesses_present.value": false,
+          "evidence[0].in_possession.value": false
+        },
+        "must_be_null": [
+          "accused[0].name.value",
+          "accused[0].relationship_to_complainant.value"
+        ],
+        "unknown": [
+          "accused.name",
+          "incident.time"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "property_damage_landlord",
+      "title": "Landlord broke the door and damaged belongings",
+      "tags": [
+        "property_damage",
+        "entering_premises",
+        "known_accused",
+        "witness_present"
+      ],
+      "turns": [
+        {
+          "user": "On 5 September my landlord Mr. Deshmukh broke the lock of my rented room while I was at work and threw my things out. My laptop screen got cracked. My roommate Farhan was there and saw it.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Mr. Deshmukh",
+                "identity_status": "known",
+                "relationship_to_complainant": "landlord",
+                "alleged_actions": [
+                  "broke the lock of the user's rented room",
+                  "threw the user's belongings out"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "5 September",
+              "location": "the user's rented room",
+              "description": "The user states that their landlord Mr. Deshmukh broke the lock of their rented room in their absence, threw their belongings out, and the user's laptop screen was cracked."
+            },
+            "acts": [
+              {
+                "type": "entering_premises",
+                "description": "broke the lock and entered the user's rented room",
+                "by": "Mr. Deshmukh",
+                "against": "complainant"
+              },
+              {
+                "type": "property_damage",
+                "description": "threw belongings out; laptop screen cracked",
+                "by": "Mr. Deshmukh",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "laptop",
+                "what_happened": "damaged",
+                "description": "screen cracked",
+                "owner": "complainant"
+              },
+              {
+                "item": "room lock",
+                "what_happened": "broken",
+                "owner": "landlord"
+              }
+            ],
+            "witnesses": [
+              {
+                "name": "Farhan",
+                "relationship": "roommate",
+                "what_witnessed": "saw the landlord break the lock and throw the belongings out"
+              }
+            ],
+            "flags": {
+              "property_involved": true,
+              "witnesses_present": true
+            }
+          },
+          "expect_question_in": [
+            "property.approximate_value",
+            "incident.time",
+            "flags.evidence_available"
+          ]
+        },
+        {
+          "user": "The laptop repair estimate is 18,000 rupees. The lock is his, so I don't know its value.",
+          "extraction": {
+            "property": [
+              {
+                "item": "laptop",
+                "approximate_value": "repair estimate 18,000 rupees"
+              },
+              {
+                "item": "room lock"
+              }
+            ],
+            "unknown_fields": [
+              "property.approximate_value"
+            ]
+          }
+        },
+        {
+          "user": "Farhan said it happened around 2 in the afternoon. I have photos of the broken lock and the laptop.",
+          "extraction": {
+            "incident": {
+              "time_hhmm": "14:00",
+              "time_description": "around 2 in the afternoon"
+            },
+            "inferred_fields": [],
+            "uncertain_fields": [
+              "incident.time"
+            ],
+            "evidence": [
+              {
+                "type": "photograph",
+                "description": "photos of the broken lock and the damaged laptop",
+                "in_possession": true
+              }
+            ],
+            "flags": {
+              "evidence_available": true
+            }
+          }
+        },
+        {
+          "user": "Room 3, second floor, Sai Apartments, Kothrud. My name is Arjun Mehta.",
+          "extraction": {
+            "incident": {
+              "location_details": "Room 3, second floor, Sai Apartments, Kothrud"
+            },
+            "complainant": {
+              "name": "Arjun Mehta"
+            }
+          }
+        },
+        {
+          "user": "Contact: arjun@example.com",
+          "extraction": {
+            "complainant": {
+              "contact": "arjun@example.com"
+            }
+          }
+        },
+        {
+          "user": "Yes, correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].relationship_to_complainant.value": "landlord",
+          "incident.date.value": "2026-09-05",
+          "property[0].what_happened.value": "damaged",
+          "witnesses[0].name.value": "Farhan",
+          "incident.time.value": "14:00",
+          "evidence[0].type": "photograph"
+        },
+        "empty_lists": [
+          "injuries",
+          "weapons"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "multiple_accused_group",
+      "title": "Three men assaulted the complainant's brother (reporting on behalf of someone else)",
+      "tags": [
+        "physical_assault",
+        "multiple_accused",
+        "on_behalf",
+        "injury"
+      ],
+      "turns": [
+        {
+          "user": "I want to report that last Saturday night three men, Raju, Pintu and one more person I don't know, beat up my younger brother Sameer outside the wine shop on MG Road. He has a fractured arm now.",
+          "extraction": {
+            "complainant_is_victim": false,
+            "victim": {
+              "name": "Sameer",
+              "relationship_to_other_party": "younger brother"
+            },
+            "accused": [
+              {
+                "name": "Raju",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "beat up the victim"
+                ]
+              },
+              {
+                "name": "Pintu",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "beat up the victim"
+                ]
+              },
+              {
+                "identity_status": "unknown",
+                "alleged_actions": [
+                  "beat up the victim"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "last Saturday",
+              "time_description": "night",
+              "location": "outside the wine shop on MG Road",
+              "description": "The user states that three men, two of them named Raju and Pintu, beat up their younger brother Sameer outside the wine shop on MG Road, resulting in a fractured arm."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "beat up the victim Sameer",
+                "by": "Raju",
+                "against": "Sameer"
+              },
+              {
+                "type": "physical_assault",
+                "description": "beat up the victim Sameer",
+                "by": "Pintu",
+                "against": "Sameer"
+              },
+              {
+                "type": "physical_assault",
+                "description": "beat up the victim Sameer",
+                "by": "unknown",
+                "against": "Sameer"
+              }
+            ],
+            "injuries": [
+              {
+                "type": "fracture",
+                "body_part": "arm",
+                "injured_person": "Sameer"
+              }
+            ],
+            "unknown_fields": [
+              "accused.name"
+            ],
+            "flags": {
+              "injury_occurred": true
+            }
+          },
+          "expect_question_in": [
+            "accused.relationship_to_complainant",
+            "accused.description",
+            "injury.treatment_received",
+            "flags.weapon_involved"
+          ]
+        },
+        {
+          "user": "Raju and Pintu live in our lane, they are local boys. The third one was tall, maybe 25, wearing a white shirt.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Raju",
+                "relationship_to_complainant": "lives in the same lane"
+              },
+              {
+                "name": "Pintu",
+                "relationship_to_complainant": "lives in the same lane"
+              },
+              {
+                "identity_status": "unknown",
+                "description": "tall, around 25 years old, white shirt"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Sameer was treated at Lifeline Hospital and they gave us an X-ray report. They kicked and punched him, no weapons.",
+          "extraction": {
+            "injuries": [
+              {
+                "body_part": "arm",
+                "treatment_received": true,
+                "hospital_or_doctor": "Lifeline Hospital",
+                "medical_report_available": true
+              }
+            ],
+            "evidence": [
+              {
+                "type": "medical_report",
+                "description": "X-ray report from Lifeline Hospital",
+                "in_possession": true
+              }
+            ],
+            "flags": {
+              "weapon_involved": false,
+              "evidence_available": true
+            }
+          }
+        },
+        {
+          "user": "The shop owner Iqbal bhai saw it. Nothing was stolen.",
+          "extraction": {
+            "witnesses": [
+              {
+                "name": "Iqbal",
+                "relationship": "wine shop owner",
+                "what_witnessed": "saw the assault"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true,
+              "property_involved": false
+            }
+          }
+        },
+        {
+          "user": "My name is Salim Shaikh. I don't remember the exact time, after 10 maybe.",
+          "extraction": {
+            "complainant": {
+              "name": "Salim Shaikh"
+            },
+            "incident": {
+              "time_description": "after 10 at night maybe"
+            },
+            "uncertain_fields": [
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "No need for my contact now.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "complainant_is_victim.value": false,
+          "victim.name.value": "Sameer",
+          "accused[0].name.value": "Raju",
+          "accused[1].name.value": "Pintu",
+          "accused[2].identity_status": "unknown",
+          "accused[2].description.value": "white shirt",
+          "injuries[0].type.value": "fracture",
+          "injuries[0].hospital_or_doctor.value": "Lifeline",
+          "witnesses[0].name.value": "Iqbal"
+        },
+        "list_lengths": {
+          "accused": 3
+        },
+        "must_be_null": [
+          "accused[2].name.value"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "harassment_stalking",
+      "title": "Stranger following the complainant repeatedly near college",
+      "tags": [
+        "stalking",
+        "harassment",
+        "unknown_accused",
+        "repeated",
+        "ambiguous_date"
+      ],
+      "turns": [
+        {
+          "user": "For the past two weeks a man has been following me from the bus stop to my college almost every day. Yesterday he came close and made comments about my clothes. I don't know him.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "identity_status": "unknown",
+                "alleged_actions": [
+                  "followed the user from the bus stop to college repeatedly",
+                  "made comments about the user's clothes"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "past two weeks, most recently yesterday",
+              "location": "between the bus stop and the user's college",
+              "description": "The user states that an unknown man has followed them from the bus stop to college almost daily for two weeks and yesterday made comments about their clothes.",
+              "ongoing_or_repeated": true
+            },
+            "acts": [
+              {
+                "type": "stalking_or_following",
+                "description": "followed the user from the bus stop to college almost every day for two weeks",
+                "by": "unknown",
+                "against": "complainant"
+              },
+              {
+                "type": "harassment",
+                "description": "came close and made comments about the user's clothes",
+                "by": "unknown",
+                "against": "complainant"
+              }
+            ],
+            "unknown_fields": [
+              "accused.name"
+            ]
+          },
+          "expect_question_in": [
+            "accused.description",
+            "incident.time",
+            "flags.witnesses_present"
+          ]
+        },
+        {
+          "user": "He is around 30, thin, always wears a grey cap and carries a black backpack.",
+          "extraction": {
+            "accused": [
+              {
+                "identity_status": "unknown",
+                "description": "around 30, thin, grey cap, black backpack"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Usually between 8 and 8:30 in the morning. My friend Divya has seen him twice.",
+          "extraction": {
+            "incident": {
+              "time_description": "between 8 and 8:30 in the morning"
+            },
+            "witnesses": [
+              {
+                "name": "Divya",
+                "relationship": "friend",
+                "what_witnessed": "has seen the man following twice"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true
+            }
+          }
+        },
+        {
+          "user": "I took a photo of him from behind yesterday. No property involved and he never touched me.",
+          "extraction": {
+            "evidence": [
+              {
+                "type": "photograph",
+                "description": "photo of the man from behind taken yesterday",
+                "in_possession": true
+              }
+            ],
+            "flags": {
+              "evidence_available": true,
+              "property_involved": false,
+              "injury_occurred": false
+            }
+          }
+        },
+        {
+          "user": "Near Ruia College, Matunga. My name is Sneha.",
+          "extraction": {
+            "incident": {
+              "location_details": "near Ruia College, Matunga"
+            },
+            "complainant": {
+              "name": "Sneha"
+            }
+          }
+        },
+        {
+          "user": "I don't want to give my number.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes, correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].identity_status": "unknown",
+          "incident.ongoing_or_repeated.value": true,
+          "incident.date.value": null,
+          "incident.date.approximate": true,
+          "incident.time.value": null,
+          "witnesses[0].name.value": "Divya",
+          "evidence[0].type": "photograph"
+        },
+        "must_be_null": [
+          "accused[0].name.value"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "contradiction_time",
+      "title": "User gives two different times without saying it is a correction",
+      "tags": [
+        "contradiction",
+        "direct",
+        "physical_assault"
+      ],
+      "turns": [
+        {
+          "user": "Rohit slapped me at the parking lot of my office yesterday at 8 PM.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Rohit",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "slapped the user"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "time_hhmm": "20:00",
+              "time_description": "8 PM",
+              "location": "parking lot of the user's office",
+              "description": "The user states that Rohit slapped them at their office parking lot."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "slapped the user",
+                "by": "Rohit",
+                "against": "complainant"
+              }
+            ]
+          }
+        },
+        {
+          "user": "He is a colleague from the accounts team.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Rohit",
+                "relationship_to_complainant": "colleague"
+              }
+            ]
+          }
+        },
+        {
+          "user": "I was not injured. It happened at 7 PM when I was leaving.",
+          "extraction": {
+            "flags": {
+              "injury_occurred": false
+            },
+            "incident": {
+              "time_hhmm": "19:00",
+              "time_description": "7 PM"
+            }
+          },
+          "expect_question_in": [
+            "clarify.incident.time"
+          ]
+        },
+        {
+          "user": "Sorry, 7 PM is correct, I left the office at 7.",
+          "extraction": {
+            "incident": {
+              "time_hhmm": "19:00"
+            },
+            "corrections": [
+              {
+                "field": "incident.time",
+                "old_value": "20:00",
+                "new_value": "19:00",
+                "quote": "7 PM is correct"
+              }
+            ],
+            "user_intent": "correct"
+          }
+        },
+        {
+          "user": "No weapon. The security guard Manoj saw it. No CCTV that I know of.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false,
+              "witnesses_present": true,
+              "evidence_available": false
+            },
+            "witnesses": [
+              {
+                "name": "Manoj",
+                "relationship": "office security guard",
+                "what_witnessed": "saw the slap"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Nothing was taken. I am Karan Gupta, contact 99xxxxxx10.",
+          "extraction": {
+            "flags": {
+              "property_involved": false
+            },
+            "complainant": {
+              "name": "Karan Gupta",
+              "contact": "99xxxxxx10"
+            }
+          }
+        },
+        {
+          "user": "Basement level 1. Yes all correct.",
+          "extraction": {
+            "incident": {
+              "location_details": "basement level 1"
+            },
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "incident.time.value": "19:00",
+          "incident.time.history[-1].value": "20:00"
+        },
+        "contradiction_fields": [
+          "incident.time"
+        ],
+        "contradictions_resolved": true,
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "contradiction_identity",
+      "title": "Named the person, later says they do not know who it was",
+      "tags": [
+        "contradiction",
+        "identity",
+        "threat"
+      ],
+      "turns": [
+        {
+          "user": "Yesterday my ex-tenant Bhavesh came to my shop in Borivali and threatened to burn it down if I don't return his deposit.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Bhavesh",
+                "identity_status": "known",
+                "relationship_to_complainant": "ex-tenant",
+                "alleged_actions": [
+                  "threatened to burn down the user's shop"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "location": "the user's shop in Borivali",
+              "description": "The user states that their ex-tenant Bhavesh came to their shop and threatened to burn it down unless his deposit was returned."
+            },
+            "acts": [
+              {
+                "type": "threat",
+                "description": "threatened to burn down the shop if the deposit was not returned",
+                "by": "Bhavesh",
+                "against": "complainant"
+              }
+            ],
+            "flags": {
+              "threat_involved": true
+            }
+          }
+        },
+        {
+          "user": "Actually I don't know who the person was, I never saw him before.",
+          "extraction": {
+            "unknown_fields": [
+              "accused.name"
+            ]
+          },
+          "expect_question_in": [
+            "clarify.accused.identity"
+          ]
+        },
+        {
+          "user": "Sorry for the confusion. It was Bhavesh, my ex-tenant. I know him well.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Bhavesh",
+                "identity_status": "known"
+              }
+            ],
+            "user_intent": "correct"
+          }
+        },
+        {
+          "user": "He said it face to face in front of my staff member Ganesh, around 11 in the morning. No weapon.",
+          "extraction": {
+            "incident": {
+              "time_hhmm": "11:00",
+              "time_description": "around 11 in the morning"
+            },
+            "uncertain_fields": [
+              "incident.time"
+            ],
+            "witnesses": [
+              {
+                "name": "Ganesh",
+                "relationship": "staff member",
+                "what_witnessed": "heard the threat"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true,
+              "weapon_involved": false
+            }
+          }
+        },
+        {
+          "user": "No recordings. No damage was done. I am Hitesh Shah, shop is at Shop 4, LT Road, Borivali West.",
+          "extraction": {
+            "flags": {
+              "evidence_available": false,
+              "property_involved": false
+            },
+            "complainant": {
+              "name": "Hitesh Shah"
+            },
+            "incident": {
+              "location_details": "Shop 4, LT Road, Borivali West"
+            }
+          }
+        },
+        {
+          "user": "Contact skip.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Bhavesh",
+          "accused[0].identity_status": "known"
+        },
+        "contradiction_fields": [
+          "accused.identity"
+        ],
+        "list_lengths": {
+          "accused": 1
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "contradiction_injury",
+      "title": "Says no injury, later describes hospital treatment",
+      "tags": [
+        "contradiction",
+        "event",
+        "physical_assault"
+      ],
+      "turns": [
+        {
+          "user": "My husband Anil pushed me against the wall last night at home. I was not injured.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Anil",
+                "identity_status": "known",
+                "relationship_to_complainant": "husband",
+                "alleged_actions": [
+                  "pushed the user against the wall"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "last night",
+              "time_description": "night",
+              "location": "the user's home",
+              "description": "The user states that their husband Anil pushed them against the wall at home."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "pushed the user against the wall",
+                "by": "Anil",
+                "against": "complainant"
+              }
+            ],
+            "flags": {
+              "injury_occurred": false
+            },
+            "denials": [
+              "user states they were not injured"
+            ]
+          }
+        },
+        {
+          "user": "No weapon. Actually my shoulder was hurting badly, so this morning I went to Dr. Rao's clinic and he gave me painkillers.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false
+            },
+            "injuries": [
+              {
+                "type": "shoulder pain",
+                "body_part": "shoulder",
+                "treatment_received": true,
+                "hospital_or_doctor": "Dr. Rao's clinic"
+              }
+            ]
+          },
+          "expect_question_in": [
+            "clarify.flags.injury_occurred"
+          ]
+        },
+        {
+          "user": "Yes I was hurt, I just didn't think of it as an injury at first.",
+          "extraction": {
+            "flags": {
+              "injury_occurred": true
+            },
+            "corrections": [
+              {
+                "field": "flags.injury_occurred",
+                "old_value": "false",
+                "new_value": "true"
+              }
+            ],
+            "user_intent": "correct"
+          }
+        },
+        {
+          "user": "I have the prescription. My daughter was in the next room and heard it. Nothing taken.",
+          "extraction": {
+            "injuries": [
+              {
+                "medical_report_available": true
+              }
+            ],
+            "evidence": [
+              {
+                "type": "medical_report",
+                "description": "prescription from Dr. Rao",
+                "in_possession": true
+              }
+            ],
+            "witnesses": [
+              {
+                "relationship": "daughter",
+                "what_witnessed": "heard the incident from the next room"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true,
+              "evidence_available": true,
+              "property_involved": false
+            }
+          }
+        },
+        {
+          "user": "Her name is Anjali. I am Sunita. Flat 7, Green Park. Skip my number.",
+          "extraction": {
+            "witnesses": [
+              {
+                "name": "Anjali",
+                "relationship": "daughter"
+              }
+            ],
+            "complainant": {
+              "name": "Sunita"
+            },
+            "incident": {
+              "location_details": "Flat 7, Green Park"
+            },
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "flags.injury_occurred.value": true,
+          "injuries[0].treatment_received.value": true,
+          "witnesses[0].name.value": "Anjali"
+        },
+        "contradiction_fields": [
+          "flags.injury_occurred"
+        ],
+        "list_lengths": {
+          "witnesses": 1
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "contradiction_timeline",
+      "title": "Timeline that cannot work (left before the incident supposedly happened)",
+      "tags": [
+        "contradiction",
+        "timeline",
+        "verbal_abuse"
+      ],
+      "turns": [
+        {
+          "user": "Yesterday at 8 PM my colleague Nikhil abused me loudly in front of everyone in the office canteen.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Nikhil",
+                "identity_status": "known",
+                "relationship_to_complainant": "colleague",
+                "alleged_actions": [
+                  "abused the user loudly in the office canteen"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "time_hhmm": "20:00",
+              "time_description": "8 PM",
+              "location": "office canteen",
+              "description": "The user states that colleague Nikhil verbally abused them loudly in the office canteen."
+            },
+            "acts": [
+              {
+                "type": "verbal_abuse",
+                "description": "abused the user loudly in front of others",
+                "by": "Nikhil",
+                "against": "complainant"
+              }
+            ],
+            "timeline": [
+              {
+                "time_description": "20:00",
+                "description": "Nikhil allegedly abused the user in the canteen"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Several colleagues saw it, including Pooja. I had already left the office at 7:30 and reached home by 8.",
+          "extraction": {
+            "witnesses": [
+              {
+                "name": "Pooja",
+                "relationship": "colleague",
+                "what_witnessed": "saw the abuse"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true
+            },
+            "timeline": [
+              {
+                "time_description": "19:30",
+                "description": "User states they left the office"
+              },
+              {
+                "time_description": "20:00",
+                "description": "User states they reached home"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Sorry, I mixed up. The canteen incident was at 6:30 PM, before I left.",
+          "extraction": {
+            "incident": {
+              "time_hhmm": "18:30",
+              "time_description": "6:30 PM"
+            },
+            "corrections": [
+              {
+                "field": "incident.time",
+                "old_value": "20:00",
+                "new_value": "18:30"
+              }
+            ],
+            "user_intent": "correct"
+          }
+        },
+        {
+          "user": "No weapon, no injury, nothing taken. No recording. I am Deepak Verma.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false,
+              "injury_occurred": false,
+              "property_involved": false,
+              "evidence_available": false
+            },
+            "complainant": {
+              "name": "Deepak Verma"
+            }
+          }
+        },
+        {
+          "user": "Third floor canteen, Infotech Park. Skip contact.",
+          "extraction": {
+            "incident": {
+              "location_details": "third floor canteen, Infotech Park"
+            },
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "incident.time.value": "18:30",
+          "witnesses[0].name.value": "Pooja"
+        },
+        "llm_only_contradiction_fields": [
+          "timeline",
+          "incident.time"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "user_refuses_information",
+      "title": "User declines address, contact and name",
+      "tags": [
+        "refusal",
+        "verbal_abuse",
+        "known_accused"
+      ],
+      "turns": [
+        {
+          "user": "My neighbour Kishore abuses me with filthy language every time I pass his door. It happened again this morning around 9.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Kishore",
+                "identity_status": "known",
+                "relationship_to_complainant": "neighbour",
+                "alleged_actions": [
+                  "abused the user with filthy language"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "this morning",
+              "time_hhmm": "09:00",
+              "time_description": "around 9",
+              "location": "outside Kishore's door in the user's building",
+              "ongoing_or_repeated": true,
+              "description": "The user states that neighbour Kishore repeatedly abuses them with filthy language, most recently this morning."
+            },
+            "acts": [
+              {
+                "type": "verbal_abuse",
+                "description": "abused the user with filthy language",
+                "by": "Kishore",
+                "against": "complainant"
+              }
+            ],
+            "uncertain_fields": [
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "Nobody else was there and I have no recording. Nothing was taken.",
+          "extraction": {
+            "flags": {
+              "witnesses_present": false,
+              "evidence_available": false,
+              "property_involved": false
+            }
+          }
+        },
+        {
+          "user": "I don't want to give my address or my name here.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.address",
+              "complainant.name"
+            ]
+          }
+        },
+        {
+          "user": "I prefer not to share my phone number either.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Second floor corridor, Building B. Yes it's correct.",
+          "extraction": {
+            "incident": {
+              "location_details": "second floor corridor, Building B"
+            },
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "complainant.name.status": "declined",
+          "complainant.address.status": "declined",
+          "complainant.contact.status": "declined",
+          "incident.date.value": "@today",
+          "incident.time.value": "09:00"
+        },
+        "declined": [
+          "complainant.address",
+          "complainant.name",
+          "complainant.contact"
+        ],
+        "max_times_asked": {
+          "complainant.name": 1,
+          "complainant.contact": 1
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "user_changes_answer",
+      "title": "User corrects the day of the incident",
+      "tags": [
+        "correction",
+        "theft"
+      ],
+      "turns": [
+        {
+          "user": "Someone stole my bicycle from outside the library on Wednesday. I don't know who did it.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "identity_status": "unknown",
+                "alleged_actions": [
+                  "stole the user's bicycle"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "Wednesday",
+              "location": "outside the library",
+              "description": "The user states that an unknown person stole their bicycle from outside the library."
+            },
+            "acts": [
+              {
+                "type": "taking_property",
+                "description": "stole the user's bicycle",
+                "by": "unknown",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "bicycle",
+                "owner": "complainant",
+                "what_happened": "taken"
+              }
+            ],
+            "unknown_fields": [
+              "accused.name",
+              "accused.description"
+            ],
+            "flags": {
+              "property_involved": true
+            }
+          }
+        },
+        {
+          "user": "Actually, it was Thursday, not Wednesday. I checked my messages.",
+          "extraction": {
+            "incident": {
+              "date_description": "Thursday"
+            },
+            "corrections": [
+              {
+                "field": "incident.date",
+                "old_value": "Wednesday",
+                "new_value": "Thursday",
+                "quote": "it was Thursday, not Wednesday"
+              }
+            ],
+            "user_intent": "correct"
+          }
+        },
+        {
+          "user": "It's a blue Hero cycle, worth about 7,000 rupees, not recovered. I wasn't there so no force was used on me.",
+          "extraction": {
+            "property": [
+              {
+                "item": "bicycle",
+                "description": "blue Hero cycle",
+                "approximate_value": "about 7,000 rupees",
+                "recovered": false,
+                "force_or_threat_used": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "I left it there around 4 PM and it was gone at 6. No witnesses I know of. The library may have CCTV but I don't have footage.",
+          "extraction": {
+            "incident": {
+              "time_description": "between 4 PM and 6 PM"
+            },
+            "flags": {
+              "witnesses_present": false,
+              "evidence_available": true
+            },
+            "evidence": [
+              {
+                "type": "cctv",
+                "description": "library may have CCTV footage",
+                "in_possession": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "Main gate cycle stand, City Central Library. I am Tanvi Rao, 22.",
+          "extraction": {
+            "incident": {
+              "location_details": "main gate cycle stand, City Central Library"
+            },
+            "complainant": {
+              "name": "Tanvi Rao",
+              "age": 22
+            }
+          }
+        },
+        {
+          "user": "Skip contact. Yes correct.",
+          "extraction": {
+            "declined_fields": [
+              "complainant.contact"
+            ],
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "incident.date.value": "@lastthursday",
+          "incident.date.history[-1].reason": "corrected",
+          "property[0].approximate_value.value": "7,000"
+        },
+        "contradiction_fields": [],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "sparse_input_hallucination",
+      "title": "Very sparse opening - nothing should be invented",
+      "tags": [
+        "hallucination_resistance",
+        "sparse"
+      ],
+      "turns": [
+        {
+          "user": "Something bad happened to me and I want to file a complaint.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "incident": {
+              "description": "The user states that something bad happened to them and they want to file a complaint."
+            }
+          },
+          "expect_question_in": [
+            "incident.date",
+            "incident.location",
+            "accused.presence",
+            "incident.description"
+          ]
+        }
+      ],
+      "expect": {
+        "must_be_null": [
+          "incident.date.value",
+          "incident.time.value",
+          "incident.location.value",
+          "complainant.name.value",
+          "flags.injury_occurred.value",
+          "flags.weapon_involved.value",
+          "flags.property_involved.value"
+        ],
+        "empty_lists": [
+          "accused",
+          "acts",
+          "injuries",
+          "weapons",
+          "property",
+          "witnesses",
+          "evidence"
+        ],
+        "final_status": "in_progress"
+      }
+    },
+    {
+      "id": "hinglish_input",
+      "title": "Hinglish opening statement",
+      "tags": [
+        "multilingual",
+        "physical_assault",
+        "property_damage"
+      ],
+      "turns": [
+        {
+          "user": "Kal raat mere neighbour Ravi ne mujhe maara aur mera phone tod diya. Building ke gate ke paas hua.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "detected_language": "hi-en",
+            "accused": [
+              {
+                "name": "Ravi",
+                "identity_status": "known",
+                "relationship_to_complainant": "neighbour",
+                "alleged_actions": [
+                  "hit the user",
+                  "broke the user's phone"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "kal raat",
+              "time_description": "raat (night)",
+              "location": "near the building gate",
+              "description": "The user states that their neighbour Ravi hit them and broke their phone near the building gate."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "hit the user",
+                "by": "Ravi",
+                "against": "complainant"
+              },
+              {
+                "type": "property_damage",
+                "description": "broke the user's phone",
+                "by": "Ravi",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "mobile phone",
+                "what_happened": "damaged",
+                "owner": "complainant"
+              }
+            ],
+            "flags": {
+              "property_involved": true
+            }
+          }
+        },
+        {
+          "user": "Haan, mere hoth pe chot aayi, doctor ke paas gaya tha. Koi hathiyar nahi tha.",
+          "extraction": {
+            "flags": {
+              "injury_occurred": true,
+              "weapon_involved": false
+            },
+            "injuries": [
+              {
+                "type": "injury",
+                "body_part": "lip",
+                "treatment_received": true
+              }
+            ]
+          }
+        },
+        {
+          "user": "Phone 12,000 ka tha. Watchman Bahadur ne dekha. Koi video nahi hai.",
+          "extraction": {
+            "property": [
+              {
+                "item": "mobile phone",
+                "approximate_value": "12,000 rupees"
+              }
+            ],
+            "witnesses": [
+              {
+                "name": "Bahadur",
+                "relationship": "building watchman",
+                "what_witnessed": "saw the incident"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true,
+              "evidence_available": false
+            }
+          }
+        },
+        {
+          "user": "Report nahi hai doctor ka. Clinic ka naam Sharma Clinic. Mera naam Rakesh hai. Number skip.",
+          "extraction": {
+            "injuries": [
+              {
+                "medical_report_available": false,
+                "hospital_or_doctor": "Sharma Clinic"
+              }
+            ],
+            "complainant": {
+              "name": "Rakesh"
+            },
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Building gate, Om Sai CHS, Thane. Haan sahi hai.",
+          "extraction": {
+            "incident": {
+              "location_details": "building gate, Om Sai CHS, Thane"
+            },
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Haan.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Ravi",
+          "accused[0].relationship_to_complainant.value": "neighbour",
+          "incident.date.value": "@yesterday",
+          "acts[0].type": "physical_assault",
+          "property[0].what_happened.value": "damaged",
+          "injuries[0].body_part.value": "lip"
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "known_accused_no_witness_no_evidence",
+      "title": "Cheating by a known acquaintance, no witnesses, no evidence",
+      "tags": [
+        "cheating",
+        "known_accused",
+        "no_witness",
+        "no_evidence"
+      ],
+      "turns": [
+        {
+          "user": "In August my acquaintance Manish took 40,000 rupees from me promising a job in Dubai and now he has blocked my number and disappeared.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Manish",
+                "identity_status": "known",
+                "relationship_to_complainant": "acquaintance",
+                "alleged_actions": [
+                  "took 40,000 rupees promising a job",
+                  "blocked the user's number and disappeared"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "in August",
+              "description": "The user states that acquaintance Manish took 40,000 rupees from them promising a job in Dubai, then blocked their number and disappeared."
+            },
+            "acts": [
+              {
+                "type": "cheating_or_fraud",
+                "description": "took 40,000 rupees promising a job in Dubai and then disappeared",
+                "by": "Manish",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "money",
+                "approximate_value": "40,000 rupees",
+                "owner": "complainant",
+                "what_happened": "taken",
+                "recovered": false
+              }
+            ],
+            "flags": {
+              "property_involved": true
+            }
+          }
+        },
+        {
+          "user": "I gave him the cash at a tea stall near Kurla station, nobody was with us. I paid in cash so I have no receipt or messages.",
+          "extraction": {
+            "incident": {
+              "location": "tea stall near Kurla station"
+            },
+            "flags": {
+              "witnesses_present": false,
+              "evidence_available": false
+            },
+            "property": [
+              {
+                "item": "money",
+                "force_or_threat_used": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "It was around 11 in the morning. I am Sanjay Yadav, my number is 98xxxxxx77.",
+          "extraction": {
+            "incident": {
+              "time_hhmm": "11:00",
+              "time_description": "around 11 in the morning"
+            },
+            "uncertain_fields": [
+              "incident.time"
+            ],
+            "complainant": {
+              "name": "Sanjay Yadav",
+              "contact": "98xxxxxx77"
+            }
+          }
+        },
+        {
+          "user": "He used to live in Nehru Nagar but I think he has moved. The stall is the one right opposite the east exit.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Manish",
+                "address_or_whereabouts": "used to live in Nehru Nagar; may have moved"
+              }
+            ],
+            "incident": {
+              "location_details": "tea stall opposite the east exit of Kurla station"
+            }
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Manish",
+          "acts[0].type": "cheating_or_fraud",
+          "flags.witnesses_present.value": false,
+          "flags.evidence_available.value": false,
+          "incident.date.value": null,
+          "incident.date.approximate": true
+        },
+        "empty_lists": [
+          "witnesses",
+          "evidence",
+          "injuries"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "online_message_threats",
+      "title": "Threatening WhatsApp messages from a partially known account",
+      "tags": [
+        "online",
+        "threat",
+        "partially_known",
+        "evidence_available"
+      ],
+      "turns": [
+        {
+          "user": "Since last Friday I am getting threatening WhatsApp messages from a number I don't know. The person calls himself 'Tiger' and says he will leak my photos if I don't pay.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "alias": "Tiger",
+                "identity_status": "partially_known",
+                "alleged_actions": [
+                  "sent threatening WhatsApp messages",
+                  "threatened to leak the user's photos unless paid"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "since last Friday",
+              "ongoing_or_repeated": true,
+              "description": "The user states that since last Friday an unknown number, using the name 'Tiger', has sent WhatsApp messages threatening to leak their photos unless they pay."
+            },
+            "acts": [
+              {
+                "type": "online_or_message_based",
+                "description": "sent threatening WhatsApp messages demanding payment",
+                "by": "Tiger",
+                "against": "complainant"
+              },
+              {
+                "type": "threat",
+                "description": "threatened to leak the user's photos unless paid",
+                "by": "Tiger",
+                "against": "complainant"
+              }
+            ],
+            "evidence": [
+              {
+                "type": "messages",
+                "description": "threatening WhatsApp messages",
+                "in_possession": true
+              }
+            ],
+            "flags": {
+              "threat_involved": true,
+              "evidence_available": true
+            }
+          }
+        },
+        {
+          "user": "I have never seen this person and I don't know what he looks like. I only know the WhatsApp number. The threats come only as messages, never calls.",
+          "extraction": {
+            "unknown_fields": [
+              "accused.description"
+            ],
+            "acts": [
+              {
+                "type": "threat",
+                "description": "threats delivered only through WhatsApp messages from an unknown number, never by call",
+                "by": "Tiger",
+                "against": "complainant"
+              }
+            ]
+          }
+        },
+        {
+          "user": "I receive them on my phone at home in Pune, mostly late at night. I have screenshots of all messages and the number.",
+          "extraction": {
+            "incident": {
+              "location": "user's home in Pune (messages received on phone)",
+              "time_description": "mostly late at night"
+            },
+            "evidence": [
+              {
+                "type": "messages",
+                "description": "screenshots of all messages and the sender's number",
+                "in_possession": true
+              }
+            ]
+          }
+        },
+        {
+          "user": "No weapon obviously, and nobody else has seen the messages except my sister Ritu who I showed them to. No money paid yet.",
+          "extraction": {
+            "flags": {
+              "weapon_involved": false,
+              "witnesses_present": true,
+              "property_involved": false
+            },
+            "witnesses": [
+              {
+                "name": "Ritu",
+                "relationship": "sister",
+                "what_witnessed": "was shown the messages"
+              }
+            ]
+          }
+        },
+        {
+          "user": "I am Neha Kulkarni. I would rather not share my address.",
+          "extraction": {
+            "complainant": {
+              "name": "Neha Kulkarni"
+            },
+            "declined_fields": [
+              "complainant.address",
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].alias.value": "Tiger",
+          "accused[0].identity_status": "partially_known",
+          "accused[0].name.value": null,
+          "evidence[0].type": "messages",
+          "incident.ongoing_or_repeated.value": true
+        },
+        "must_be_null": [
+          "accused[0].name.value"
+        ],
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "ambiguous_date_recently",
+      "title": "User only says 'recently' and cannot narrow the date",
+      "tags": [
+        "ambiguous_date",
+        "unknown_time",
+        "theft"
+      ],
+      "turns": [
+        {
+          "user": "Recently my wallet was stolen at the bus depot. I noticed it only when I reached home.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "identity_status": "unknown",
+                "alleged_actions": [
+                  "stole the user's wallet"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "recently",
+              "location": "bus depot",
+              "description": "The user states that their wallet was stolen at the bus depot by an unknown person and they noticed it on reaching home."
+            },
+            "acts": [
+              {
+                "type": "taking_property",
+                "description": "stole the user's wallet",
+                "by": "unknown",
+                "against": "complainant"
+              }
+            ],
+            "property": [
+              {
+                "item": "wallet",
+                "owner": "complainant",
+                "what_happened": "taken"
+              }
+            ],
+            "unknown_fields": [
+              "accused.name",
+              "accused.description"
+            ],
+            "flags": {
+              "property_involved": true
+            }
+          }
+        },
+        {
+          "user": "I honestly don't remember the exact day, maybe last week. I don't know the time either.",
+          "extraction": {
+            "incident": {
+              "date_description": "maybe last week"
+            },
+            "unknown_fields": [
+              "incident.date",
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "About 2,500 rupees cash and my cards, so around 3,000. Not recovered. Nobody pushed me, I didn't feel anything.",
+          "extraction": {
+            "property": [
+              {
+                "item": "wallet",
+                "approximate_value": "around 3,000 rupees",
+                "recovered": false,
+                "force_or_threat_used": false
+              }
+            ]
+          }
+        },
+        {
+          "user": "No witnesses, no CCTV that I know. I am Prakash. Skip contact.",
+          "extraction": {
+            "flags": {
+              "witnesses_present": false,
+              "evidence_available": false
+            },
+            "complainant": {
+              "name": "Prakash"
+            },
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Platform 2, Swargate depot. Yes correct.",
+          "extraction": {
+            "incident": {
+              "location_details": "Platform 2, Swargate depot"
+            },
+            "user_intent": "confirm"
+          }
+        },
+        {
+          "user": "Yes.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "incident.date.value": null,
+          "incident.date.approximate": true,
+          "incident.time.value": null,
+          "incident.time.status": "unknown"
+        },
+        "max_times_asked": {
+          "incident.date": 1,
+          "incident.time": 1
+        },
+        "final_status": "complete"
+      }
+    },
+    {
+      "id": "repeated_information",
+      "title": "User repeats the same facts twice - no duplication",
+      "tags": [
+        "repetition",
+        "physical_assault"
+      ],
+      "turns": [
+        {
+          "user": "Yesterday Gopal slapped me near the temple. My cousin Ajay saw it.",
+          "extraction": {
+            "complainant_is_victim": true,
+            "accused": [
+              {
+                "name": "Gopal",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "slapped the user"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "location": "near the temple",
+              "description": "The user states that Gopal slapped them near the temple."
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "slapped the user",
+                "by": "Gopal",
+                "against": "complainant"
+              }
+            ],
+            "witnesses": [
+              {
+                "name": "Ajay",
+                "relationship": "cousin",
+                "what_witnessed": "saw the slap"
+              }
+            ],
+            "flags": {
+              "witnesses_present": true
+            }
+          }
+        },
+        {
+          "user": "Like I said, Gopal slapped me near the temple yesterday and Ajay, my cousin, saw it.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Gopal",
+                "identity_status": "known",
+                "alleged_actions": [
+                  "slapped the user"
+                ]
+              }
+            ],
+            "incident": {
+              "date_description": "yesterday",
+              "location": "near the temple"
+            },
+            "acts": [
+              {
+                "type": "physical_assault",
+                "description": "slapped the user",
+                "by": "Gopal",
+                "against": "complainant"
+              }
+            ],
+            "witnesses": [
+              {
+                "name": "Ajay",
+                "relationship": "cousin",
+                "what_witnessed": "saw the slap"
+              }
+            ]
+          }
+        },
+        {
+          "user": "Gopal is a distant relative. No injury, no weapon, nothing taken, no video. Around 6 in the evening.",
+          "extraction": {
+            "accused": [
+              {
+                "name": "Gopal",
+                "relationship_to_complainant": "distant relative"
+              }
+            ],
+            "flags": {
+              "injury_occurred": false,
+              "weapon_involved": false,
+              "property_involved": false,
+              "evidence_available": false
+            },
+            "incident": {
+              "time_hhmm": "18:00",
+              "time_description": "around 6 in the evening"
+            },
+            "uncertain_fields": [
+              "incident.time"
+            ]
+          }
+        },
+        {
+          "user": "Near the main entrance of Ganesh temple. I am Vinod. Skip contact.",
+          "extraction": {
+            "incident": {
+              "location_details": "near the main entrance of Ganesh temple"
+            },
+            "complainant": {
+              "name": "Vinod"
+            },
+            "declined_fields": [
+              "complainant.contact"
+            ]
+          }
+        },
+        {
+          "user": "Yes correct.",
+          "extraction": {
+            "user_intent": "confirm"
+          }
+        }
+      ],
+      "expect": {
+        "facts": {
+          "accused[0].name.value": "Gopal",
+          "witnesses[0].name.value": "Ajay"
+        },
+        "list_lengths": {
+          "accused": 1,
+          "witnesses": 1,
+          "acts": 1
+        },
+        "contradiction_fields": [],
+        "final_status": "complete"
+      }
+    }
+  ]
+}
