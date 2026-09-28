@@ -82,3 +82,50 @@ export interface Passage {
   /** which retriever(s) found it — useful for debugging relevance */
   via: ('vector' | 'text')[];
 }
+
+/* ------------------------------------------------------------------------ */
+/* Accounts. Unlike everything above, these live in `legalplatform_app` —    */
+/* this application's own database — and this application does write them.  */
+/* ------------------------------------------------------------------------ */
+
+/** `admin` is never self-selected: it is granted by scripts/createAdmin.ts. */
+export type Role = 'citizen' | 'student' | 'lawyer' | 'judge' | 'admin';
+
+/** Lawyers and judges claim a professional identity, so an admin checks it
+ *  before those accounts get anything a citizen account does not. */
+export type VerificationStatus = 'not_required' | 'pending' | 'verified' | 'rejected';
+
+/** Role-specific fields. Which ones are present depends on `role`. */
+export interface RoleDetails {
+  // lawyer
+  barCouncilId?: string;
+  barCouncilState?: string;
+  // judge
+  courtName?: string;
+  designation?: string;
+  // student / researcher
+  institution?: string;
+  programme?: string;
+}
+
+export interface UserDoc {
+  _id?: import('mongodb').ObjectId;
+  email: string;            // stored lower-cased; unique index
+  name: string;
+  passwordHash: string;     // bcrypt — the password itself is never stored
+  role: Role;
+  details: RoleDetails;
+  city?: string;
+  state?: string;
+  verification: {
+    status: VerificationStatus;
+    reviewedBy?: import('mongodb').ObjectId;
+    reviewedAt?: Date;
+    note?: string;
+  };
+  /** Bumped on password change so every existing session cookie stops working. */
+  tokenVersion: number;
+  createdAt: Date;
+  updatedAt: Date;
+  lastLoginAt?: Date;
+}

@@ -26,6 +26,7 @@ The two systems are integrated into one user-facing application while remaining 
 * [Using the Application](#using-the-application)
 * [FIR Assistant Flow](#fir-assistant-flow)
 * [Legal Research Flow](#legal-research-flow)
+* [User Accounts](#user-accounts)
 * [API Routing](#api-routing)
 * [Data and Privacy Isolation](#data-and-privacy-isolation)
 * [Troubleshooting](#troubleshooting)
@@ -447,6 +448,16 @@ The FIR proxy must point to:
 FIR_BACKEND_URL=http://localhost:8000
 ```
 
+User accounts also need a `JWT_SECRET`, a long random string that signs login
+cookies. Generate one and paste it after `JWT_SECRET=`:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+```
+
+The server refuses to start without it. Each teammate can use their own; it only
+matters that it stays secret. Changing it logs every user out.
+
 The actual MongoDB URI and API credentials must be supplied locally.
 
 Do not put those credentials into Git.
@@ -729,6 +740,60 @@ Citation Graph
 ```
 
 The existing Legal Research backend continues to handle these operations independently.
+
+---
+
+# User Accounts
+
+Anyone can search and read judgments without an account. Signing up adds a
+profile, and lawyers and judges can have their credentials verified.
+
+## Roles
+
+| Role | Sign-up asks for | Status after sign-up |
+|---|---|---|
+| Citizen | name, email, password | Active |
+| Law student / Researcher | + institution, programme | Active |
+| Lawyer | + Bar Council enrolment no., state of enrolment | **Pending** until an admin approves |
+| Judge | + court, designation | **Pending** until an admin approves |
+| Admin | created from the command line only | Active |
+
+A pending lawyer or judge can use everything a citizen can. If a verified
+lawyer or judge edits their enrolment number or court details, the account goes
+back to pending.
+
+## Creating the first admin
+
+Admins cannot sign up through the website, otherwise anyone could approve
+themselves. From `ly-project/server`:
+
+```bash
+npm run create-admin -- --email you@example.com --name "Your Name"
+```
+
+You are asked for a password at a hidden prompt. If the email already has an
+account, that account is promoted to admin and keeps its password. Admins
+approve or reject lawyers and judges at `/admin`.
+
+## Where account data lives
+
+Accounts are stored in a separate MongoDB database, `legalplatform_app`, on the
+same Atlas cluster as `bail_rag`. The research data in `bail_rag` is never
+written to. Passwords are stored only as bcrypt hashes. The session is an
+httpOnly cookie that page JavaScript cannot read.
+
+## Endpoints
+
+| Method | Path | Who |
+|---|---|---|
+| POST | `/api/auth/signup` | anyone (rate-limited) |
+| POST | `/api/auth/login` | anyone (rate-limited) |
+| POST | `/api/auth/logout` | anyone |
+| GET | `/api/auth/me` | anyone (`{ user: null }` when logged out) |
+| GET / PATCH | `/api/me/profile` | logged in |
+| POST | `/api/me/password` | logged in; logs out other devices |
+| GET | `/api/admin/users?status=pending` | admin |
+| POST | `/api/admin/users/:id/verify` | admin |
 
 ---
 

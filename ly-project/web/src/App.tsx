@@ -1,8 +1,17 @@
-import { Link, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import { KanoonCredit } from './components/Attribution';
 import Icon, { GraphMark } from './components/Icon';
+import UserMenu from './components/UserMenu';
 
 export default function App() {
+  // Client-side navigation keeps the old scroll position by default, so a
+  // redirect (e.g. signup → profile) would land mid-page. Start each page at the top.
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="min-h-full flex flex-col">
       <div className="h-1 bg-gradient-to-r from-maroon-800 via-maroon-600 to-gold-400" />
@@ -18,24 +27,29 @@ export default function App() {
               Supreme Court bail jurisprudence
             </span>
           </Link>
-          <nav className="flex items-center gap-4 text-xs">
+          <nav className="flex items-center gap-3 text-xs sm:gap-4">
             <Link
               to="/explore"
+              title="Citation explorer"
+              aria-label="Citation explorer"
               className="flex items-center gap-1.5 text-stone-600 transition-colors hover:text-maroon-700"
             >
               <Icon name="network" size={14} />
-              Citation explorer
+              <span className="hidden sm:inline">Citation explorer</span>
             </Link>
             <Link
               to="/fir"
+              title="FIR Assistant"
+              aria-label="FIR Assistant"
               className="flex items-center gap-1.5 text-stone-600 transition-colors hover:text-maroon-700"
             >
               <Icon name="document" size={14} />
-              FIR Assistant
+              <span className="hidden sm:inline">FIR Assistant</span>
             </Link>
-            <span className="hidden text-stone-400 sm:inline">
+            <span className="hidden text-stone-400 lg:inline">
               198 judgments &middot; 1912&ndash;2022
             </span>
+            <UserMenu />
           </nav>
         </div>
       </header>

@@ -29,7 +29,13 @@ export type IconName =
   | 'chevronLeft'
   | 'chevronRight'
   | 'external'
-  | 'alert';
+  | 'alert'
+  | 'user'
+  | 'logout'
+  | 'shield'
+  | 'check'
+  | 'close'
+  | 'lock';
 
 const PATHS: Record<IconName, React.ReactNode> = {
   search: (
@@ -118,6 +124,33 @@ const PATHS: Record<IconName, React.ReactNode> = {
     <>
       <path d="M12 3.5 22 20H2z" />
       <path d="M12 9.5v4.5M12 17h.01" />
+    </>
+  ),
+  user: (
+    <>
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4.5 21a7.5 7.5 0 0 1 15 0" />
+    </>
+  ),
+  logout: (
+    <>
+      <path d="M9.5 20H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3.5" />
+      <path d="M15 16.5 19.5 12 15 7.5M19.5 12H9" />
+    </>
+  ),
+  // Verification: the badge a checked lawyer or judge account carries.
+  shield: (
+    <>
+      <path d="M12 2.5 19.5 5.5v6c0 4.6-3.2 8.3-7.5 10-4.3-1.7-7.5-5.4-7.5-10v-6z" />
+      <path d="m8.8 12 2.3 2.3 4.2-4.6" />
+    </>
+  ),
+  check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
+  close: <path d="M6 6l12 12M18 6 6 18" />,
+  lock: (
+    <>
+      <rect x="4.5" y="10.5" width="15" height="10.5" rx="2" />
+      <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
     </>
   ),
 };
