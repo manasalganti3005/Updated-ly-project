@@ -19,6 +19,10 @@ import AdminPage from './pages/auth/AdminPage.tsx';
 import LoginPage from './pages/auth/LoginPage.tsx';
 import ProfilePage from './pages/auth/ProfilePage.tsx';
 import SignupPage from './pages/auth/SignupPage.tsx';
+import ComparePage from './pages/judge/ComparePage.tsx';
+import MemoPage from './pages/judge/MemoPage.tsx';
+import TreatmentPage from './pages/judge/TreatmentPage.tsx';
+import RequireJudge from './components/RequireJudge.tsx';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -94,6 +98,39 @@ createRoot(document.getElementById('root')!).render(
                   </RequireAuth>
                 }
               />
+              <Route
+                path="/judge/compare"
+                element={
+                  <RequireJudge>
+                    <ComparePage />
+                  </RequireJudge>
+                }
+              />
+              <Route
+                path="/judge/treatment"
+                element={
+                  <RequireJudge>
+                    <TreatmentPage />
+                  </RequireJudge>
+                }
+              />
+              <Route
+                path="/judge/treatment/:tid"
+                element={
+                  <RequireJudge>
+                    <TreatmentPage />
+                  </RequireJudge>
+                }
+              />
+              <Route
+                path="/judge/memo"
+                element={
+                  <RequireJudge>
+                    <MemoPage />
+                  </RequireJudge>
+                }
+              />
+              <Route path="/judge" element={<Navigate to="/judge/compare" replace />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route

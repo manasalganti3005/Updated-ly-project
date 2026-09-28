@@ -2,6 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getCase, type Citation } from '../api';
+import { canUseJudgeTools } from '../api/judge';
+import { useAuth } from '../auth';
 import { KanoonSourceNote } from '../components/Attribution';
 import { PolarityBadge, TierBadge } from '../components/Badges';
 import ChatPanel from '../components/ChatPanel';
@@ -23,6 +25,7 @@ export default function CasePage() {
     queryFn: () => getCase(tid),
   });
   const [tab, setTab] = useState<Tab>('document');
+  const { user } = useAuth();
 
   useDocumentTitle(data ? shortCaseTitle(data.title) : null);
 
@@ -75,7 +78,25 @@ export default function CasePage() {
             {data.author && <span>{data.author}</span>}
           </div>
         </div>
-        <SaveButton tid={tid} />
+        <div className="flex flex-wrap items-center gap-2">
+          {canUseJudgeTools(user) && (
+            <>
+              <Link
+                to={`/judge/treatment/${tid}`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-stone-300 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 transition-colors hover:border-stone-400"
+              >
+                <Icon name="network" size={14} /> Treatment
+              </Link>
+              <Link
+                to={`/judge/compare?a=${tid}`}
+                className="inline-flex items-center gap-1.5 rounded-md border border-stone-300 bg-white px-3 py-1.5 text-xs font-medium text-stone-700 transition-colors hover:border-stone-400"
+              >
+                <Icon name="scale" size={14} /> Compare with…
+              </Link>
+            </>
+          )}
+          <SaveButton tid={tid} />
+        </div>
       </div>
 
       {data.courtTier !== 'SC' && (

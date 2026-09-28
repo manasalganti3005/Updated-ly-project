@@ -823,6 +823,24 @@ approve or reject lawyers and judges at `/admin`.
   incident categories and the weapon flag, never names, places or free text, and
   nothing is sent to the server.
 
+## Judges' research desk
+
+For verified judges (and admins). Open it from the account menu, or from the
+**Treatment** and **Compare with…** buttons on any case page.
+
+* **Compare two judgments** (`/judge/compare`): two judgments and a legal
+  question. The comparison is written only from labelled extracts of the two
+  judgments (`[A1]`, `[B2]`…), shown below it; each label is clickable. Any
+  quotation not found in those extracts is flagged. The model is instructed never
+  to suggest an outcome, and a question like "should I grant bail?" also gets a
+  fixed notice from the server before the model answers.
+* **Treatment timeline** (`/judge/treatment/:tid`): every later judgment in
+  the library that cites a case, in date order, marked relied on / disagreed /
+  mixed, with a warning when any disagreed.
+* **Research memo** (`/judge/memo`): turns one of your folders (saved judgments
+  plus your notes) into a printable memorandum with treatment counts. Nothing
+  in it is machine-written. Use **Print or save as PDF**.
+
 ## Where account data lives
 
 Accounts, saved judgments and folders are stored in a separate MongoDB
@@ -856,6 +874,9 @@ this have no owner and are not shown to anyone in the app.
 | GET / POST | `/api/me/folders` | logged in |
 | PATCH / DELETE | `/api/me/folders/:id` | logged in (deleting keeps the judgments saved) |
 | any | `/api/fir/*` | logged in; forwarded with the user's id |
+| GET | `/api/judge/treatment/:tid` | verified judge or admin |
+| POST | `/api/judge/compare` | verified judge or admin (SSE stream) |
+| GET | `/api/judge/memo/:folderId` | verified judge or admin (own folders only) |
 
 ---
 

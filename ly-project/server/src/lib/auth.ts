@@ -101,12 +101,14 @@ export function requireRole(...roles: Role[]) {
   };
 }
 
-/** For professional-only features (Phase 3): the role alone is not enough,
- *  an admin must have approved it. */
+/** For professional-only features: the role alone is not enough, an admin
+ *  must have approved it. Admins also pass, so they can check and demo the
+ *  features they are approving people for. */
 export function requireVerified(...roles: Role[]) {
   return (req: Request, res: Response, next: NextFunction) => {
     if (!req.user) return res.status(401).json({ error: 'Please log in to continue.' });
     const { role, verification } = req.user;
+    if (role === 'admin') return next();
     if (!roles.includes(role) || verification.status !== 'verified') {
       return res.status(403).json({ error: 'This feature is available to verified accounts only.' });
     }

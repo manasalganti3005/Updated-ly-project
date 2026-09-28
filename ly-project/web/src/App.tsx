@@ -14,9 +14,9 @@ export default function App() {
 
   return (
     <div className="min-h-full flex flex-col">
-      <div className="h-1 bg-gradient-to-r from-maroon-800 via-maroon-600 to-gold-400" />
+      <div className="h-1 bg-gradient-to-r from-maroon-800 via-maroon-600 to-gold-400 print:hidden" />
 
-      <header className="border-b border-stone-200 bg-white">
+      <header className="border-b border-stone-200 bg-white print:hidden">
         <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
           <Link to="/" className="group flex items-center gap-2.5">
             <GraphMark size={22} className="transition-transform group-hover:-rotate-6" />
@@ -69,7 +69,7 @@ export default function App() {
 
       {/* The IKanoon credit is required by the terms under which this corpus was
           collected — see CLAUDE.md rule 10 in the data repo. Do not remove it. */}
-      <footer className="border-t border-stone-200 bg-stone-100">
+      <footer className="border-t border-stone-200 bg-stone-100 print:hidden">
         <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-stone-500">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <KanoonCredit />
