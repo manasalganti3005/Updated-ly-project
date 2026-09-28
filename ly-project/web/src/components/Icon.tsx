@@ -41,7 +41,9 @@ export type IconName =
   | 'folder'
   | 'plus'
   | 'trash'
-  | 'pencil';
+  | 'pencil'
+  | 'scale'
+  | 'phone';
 
 const PATHS: Record<IconName, React.ReactNode> = {
   search: (
@@ -169,6 +171,16 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="M4.5 7h15M9.5 7V4.5h5V7" />
       <path d="M6.5 7l1 13h9l1-13M10 11v5.5M14 11v5.5" />
     </>
+  ),
+  // Scales of justice: the "your rights" section.
+  scale: (
+    <>
+      <path d="M12 3.5v17M7 20.5h10M5 6.5h14" />
+      <path d="M5 6.5 2.5 12.5a2.5 2.5 0 0 0 5 0zM19 6.5l-2.5 6a2.5 2.5 0 0 0 5 0z" />
+    </>
+  ),
+  phone: (
+    <path d="M5 3.5h3.5l1.5 4.5-2.3 1.6a12 12 0 0 0 6.7 6.7l1.6-2.3 4.5 1.5V19a1.5 1.5 0 0 1-1.5 1.5A16.5 16.5 0 0 1 3.5 5 1.5 1.5 0 0 1 5 3.5z" />
   ),
   pencil: (
     <>

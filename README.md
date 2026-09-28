@@ -806,6 +806,23 @@ approve or reject lawyers and judges at `/admin`.
 * **Profile**: details, verification status, password change, and a workspace
   summary with counts.
 
+## Citizen features
+
+* **Know your bail rights** (`/rights`, public): a plain-language guide covering
+  bailable and non-bailable offences, anticipatory bail, default bail, rights on
+  arrest, limits on undertrial detention, and how courts decide. Each topic cites
+  the BNSS section and the former CrPC section, and links to the landmark
+  judgments in the library. The content lives in
+  `ly-project/web/src/content/bailRights.ts` so it can be reviewed without
+  touching page code.
+* **Free legal help**: NALSA helpline 15100, the online legal-aid application,
+  and the directory of state authorities, named after the state in the user's
+  profile. Shown on the guide, the FIR Assistant, and after an FIR is confirmed.
+* **What may happen next**: after an FIR is confirmed, hand-picked judgments on
+  how courts approach bail for that type of accusation. It reads only the fixed
+  incident categories and the weapon flag, never names, places or free text, and
+  nothing is sent to the server.
+
 ## Where account data lives
 
 Accounts, saved judgments and folders are stored in a separate MongoDB

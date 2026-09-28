@@ -38,6 +38,15 @@ export default function App() {
               <span className="hidden sm:inline">Citation explorer</span>
             </Link>
             <Link
+              to="/rights"
+              title="Know your bail rights"
+              aria-label="Know your bail rights"
+              className="flex items-center gap-1.5 text-stone-600 transition-colors hover:text-maroon-700"
+            >
+              <Icon name="scale" size={14} />
+              <span className="hidden sm:inline">Your rights</span>
+            </Link>
+            <Link
               to="/fir"
               title="FIR Assistant"
               aria-label="FIR Assistant"
@@ -46,7 +55,7 @@ export default function App() {
               <Icon name="document" size={14} />
               <span className="hidden sm:inline">FIR Assistant</span>
             </Link>
-            <span className="hidden text-stone-400 lg:inline">
+            <span className="hidden text-stone-400 xl:inline">
               198 judgments &middot; 1912&ndash;2022
             </span>
             <UserMenu />

@@ -149,6 +149,7 @@ function VerificationPanel({ user }: { user: User }) {
 
 /** Shortcuts into the user's own work, with counts. */
 function WorkspaceCard() {
+  const { user } = useAuth();
   const { data: folderList } = useQuery({ queryKey: workspaceKeys.folders, queryFn: listFolders });
   const { data: firs } = useQuery({ queryKey: ['me', 'fir-cases'], queryFn: () => listFirCases(50), retry: false });
 
@@ -157,6 +158,7 @@ function WorkspaceCard() {
     { to: '/saved', icon: 'folder', label: 'Folders', value: folderList?.folders.length, hint: 'Grouped by client or topic' },
     { to: '/fir', icon: 'document', label: 'My FIRs', value: firs?.length, hint: 'Drafts and confirmed' },
   ];
+  const isCitizen = user?.role === 'citizen';
 
   return (
     <section className="rounded-xl border border-stone-200 bg-white p-6">
@@ -177,6 +179,21 @@ function WorkspaceCard() {
           </Link>
         ))}
       </div>
+      {isCitizen && (
+        <Link
+          to="/rights"
+          className="mt-3 flex items-center justify-between rounded-lg border border-navy-200 bg-navy-50 px-4 py-3 text-sm text-navy-700 transition-colors hover:border-navy-300"
+        >
+          <span className="flex items-center gap-2">
+            <Icon name="scale" size={16} />
+            <span>
+              <span className="font-medium">Know your bail rights</span>
+              <span className="block text-xs text-navy-500">and where to get a lawyer for free (helpline 15100)</span>
+            </span>
+          </span>
+          <Icon name="chevronRight" size={16} />
+        </Link>
+      )}
     </section>
   );
 }

@@ -7,6 +7,7 @@ import { AuthProvider, RequireAuth } from './auth.tsx';
 import './index.css';
 import CasePage from './pages/CasePage.tsx';
 import ExplorerPage from './pages/ExplorerPage.tsx';
+import RightsPage from './pages/RightsPage.tsx';
 import SavedPage from './pages/SavedPage.tsx';
 import SearchPage from './pages/SearchPage.tsx';
 import FirHomePage from './pages/fir/FirHomePage.tsx';
@@ -44,6 +45,7 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/" element={<SearchPage />} />
               <Route path="/case/:tid" element={<CasePage />} />
               <Route path="/explore" element={<ExplorerPage />} />
+              <Route path="/rights" element={<RightsPage />} />
               <Route
                 path="/fir"
                 element={

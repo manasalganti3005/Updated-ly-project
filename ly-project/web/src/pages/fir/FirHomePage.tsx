@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createFirCase, listFirCases, type CaseListItem } from '../../api/fir';
 import Icon from '../../components/Icon';
+import LegalAidCard from '../../components/LegalAidCard';
 import { useDocumentTitle } from '../../useDocumentTitle';
 
 /**
@@ -137,6 +138,26 @@ export default function FirHomePage() {
       {loadingCases && (
         <p className="text-sm text-stone-500">Loading your FIRs…</p>
       )}
+
+      {/* Citizen help: rights guide and free legal aid */}
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <Link
+          to="/rights"
+          className="flex flex-col justify-between rounded-xl border border-stone-200 bg-white p-5 transition-colors hover:border-terracotta-300"
+        >
+          <span>
+            <span className="flex items-center gap-2 text-base font-semibold text-stone-900">
+              <Icon name="scale" size={18} className="text-maroon-700" /> Know your bail rights
+            </span>
+            <span className="mt-1.5 block text-sm text-stone-600">
+              A plain-language guide: bailable and non-bailable offences, anticipatory bail, default
+              bail, and your rights on arrest.
+            </span>
+          </span>
+          <span className="mt-4 text-sm font-medium text-maroon-700">Read the guide →</span>
+        </Link>
+        <LegalAidCard compact />
+      </div>
 
       {/* Separator from Legal Research */}
       <div className="mt-10 border-t border-stone-200 pt-6">

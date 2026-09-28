@@ -244,6 +244,33 @@ export interface CaseState {
 }
 
 // ---------------------------------------------------------------------------
+// Helpers — ports of the Python-side methods/properties on Fact and Accused.
+// Pydantic does not serialize methods or @property values, so they are not
+// present in the JSON and must be computed on the client.
+// ---------------------------------------------------------------------------
+
+/** Mirrors `Fact.display()`. */
+export function displayFact<T>(fact: Fact<T>): string {
+  if (fact.value !== null) {
+    let text = String(fact.value);
+    if (fact.approximate) text += ' (approx.)';
+    return text;
+  }
+  if (fact.approximate && fact.description) return `${fact.description} (approx.)`;
+  if (fact.status === 'unknown') return 'not known to complainant';
+  if (fact.status === 'declined') return 'declined to share';
+  return 'not provided';
+}
+
+/** Mirrors `Accused.label()`: human readable handle for an accused person. */
+export function accusedLabel(accused: Accused): string {
+  if (accused.name.value) return accused.name.value;
+  if (accused.alias.value) return `person known as '${accused.alias.value}'`;
+  if (accused.description.value) return `unidentified person (${accused.description.value})`;
+  return 'unidentified person';
+}
+
+// ---------------------------------------------------------------------------
 // Response types
 // ---------------------------------------------------------------------------
 
